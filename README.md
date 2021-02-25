@@ -1,2 +1,2 @@
 # CompetitiveProgrammingPractice
-My solutions to many of the practice problems I've solved.
+My solutions to some practice problems I've solved.
