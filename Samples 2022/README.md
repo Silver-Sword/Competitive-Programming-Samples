@@ -15,12 +15,22 @@
 | Grid | grid.cpp | greedy, geometry |
 | AI Jeopardy | jeopardy.java | number theory, binary search |
 | Joining the KAK | kak.cpp | counting, string, dp |
-| lifeguards    | lifeguards.cpp | dynamic programming |
+| lifeguards    | lifeguards.cpp | dp |
 | Open-Pit Mining | openpitmining.cpp | network flow, min cut |
 | Password Suspects | passwordsuspect.cpp | string, aho corasick |
-| Push a Box | pushabox.cpp | graph, 2 vertex connected components |
+| Push a Box | pushabox.cpp | graph, 2VCCs |
 | Red/Blue Spanning Trees | spanning.cpp | MST, greedy |
 | Standing Out From the Herd  | standingout.cpp | string, suffix array |
 | Three Triangles | triangles.cpp | geometry |
 | Tri-Color Puzzle | tricolor.cpp | gaussian, counting |
-| Word Puzzle | wordpuzzle.cpp | string, dynamic programming |
+| Word Puzzle | wordpuzzle.cpp | string, dp |
+
+
+## Tag Acronym Key
+
+| Acronym | Phrase |
+| :-----: | ------ |
+| 2VCCs | 2 vertex connected components |
+| bfs | breadth first search |
+| dp | dynamic programming |
+| MST | minimum spanning tree |
