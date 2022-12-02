@@ -1,41 +1,43 @@
 # Problem Tags
 
-lifeguards (lifeguards.cpp) - dynamic programming
-
-Grid (grid.cpp) - greedy, geometry
-
-Checker Slide (checker.cpp) - hashing, bfs
-
-Tri-Color Puzzle (tricolor.cpp) - gaussian, counting
-
-Even Substrings (even.cpp) - segment tree, prefix sums, hashing
-
-Tree Number Generator (generator.cpp) - tree, lowest common anestor
-
-Word Puzzle (wordpuzzle.cpp) - string, dynamic programming
-
-Push a Box (pushabox.cpp) - graph, 2 vertex connected components
-
-Open-Pit Mining (openpitmining.cpp) - network flow, min cut
-
-Standing Out From the Herd (standingout.cpp) - string, suffix array
-
-Password Suspects (passwordsuspect.cpp) - string, aho corasick
-
-Kiwis vs. Kangaroos II (battle.cpp) - greedy
-
-Electricity (electricity.cpp) - greedy
-
-Agile Permutations (agile.cpp) - matrix exponentiation, counting
-
-Joining the KAK (kak.cpp) - counting, string, dp
-
-Among Us (amongus.cpp) - graph, dp
-
-Red/Blue Spanning Trees (spanning.cpp) - MST, greedy
-
-AI Jeopardy (jeopardy.java) - number theory, binary search
-
-
-Two Buildings (buildings.cpp) - divide and conquer
-Dot the i's and Cross the t's - geometry (Learn)
+| Problem Title | File Name | Problem Tags |
+| ------------- | --------- | ------------ |
+| Agile Permutations | agile.cpp | matrix exponentiation, counting |
+| ------------- | --------- | ------------ |
+| Among Us | amongus.cpp | graph, bitmask dp, bfs |
+| ------------- | --------- | ------------ |
+| Kiwis vs Kangaroos II | battle.cpp | greedy |
+| ------------- | --------- | ------------ |
+| Two Buildings | buildings.cpp | divide and conquer |
+| ------------- | --------- | ------------ |
+| Checker Slide | checker.cpp | hashing, bfs |
+| ------------- | --------- | ------------ |
+| Electricity | electricity.cpp | greedy |
+| ------------- | --------- | ------------ |
+| Even Substrings | even.cpp | segment tree, prefix sums, hashing |
+| ------------- | --------- | ------------ |
+| Tree Number Generator | generator.cpp | tree, lowest common ancestor |
+| ------------- | --------- | ------------ |
+| Grid | grid.cpp | greedy, geometry |
+| ------------- | --------- | ------------ |
+| AI Jeopardy | jeopardy.java | number theory, binary search |
+| ------------- | --------- | ------------ |
+| Joining the KAK | kak.cpp | counting, string, dp |
+| ------------- | --------- | ------------ |
+| lifeguards    | lifeguards.cpp | dynamic programming |
+| ------------- | --------- | ------------ |
+| Open-Pit Mining | openpitmining.cpp | network flow, min cut |
+| ------------- | --------- | ------------ |
+| Password Suspects | passwordsuspect.cpp | string, aho corasick |
+| ------------- | --------- | ------------ |
+| Push a Box | pushabox.cpp | graph, 2 vertex connected components |
+| ------------- | --------- | ------------ |
+| Red/Blue Spanning Trees | spanning.cpp | MST, greedy |
+| ------------- | --------- | ------------ |
+| Standing Out From the Herd  | standingout.cpp | string, suffix array |
+| ------------- | --------- | ------------ |
+| Three Triangles | triangles.cpp | geometry |
+| ------------- | --------- | ------------ |
+| Tri-Color Puzzle | tricolor.cpp | gaussian, counting |
+| ------------- | --------- | ------------ |
+| Word Puzzle | wordpuzzle.cpp | string, dynamic programming |
