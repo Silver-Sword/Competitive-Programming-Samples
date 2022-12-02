@@ -1,5 +1,7 @@
 # Problem Tags
 
+<center>
+
 | Problem Title | File Name | Problem Tags |
 | ------------- | --------- | ------------ |
 | Agile Permutations | agile.cpp | matrix exponentiation, counting |
