@@ -82,69 +82,6 @@ public class d {
 		
 	}
 
-	/*public static int binSearch(int endpoint, Frog[] start)
-	{
-		int low = 0, high = n-1, mid = (high + low) / 2;
-		
-		while(low + 1 < high)
-		{
-			if(start[mid].start <= endpoint && start[mid].end >= endpoint)
-				high = mid;
-			
-			else if(start[mid].end < endpoint)
-				low = mid + 1;
-			
-			else
-				high = mid - 1;
-			
-			mid = (low + high) / 2;
-		}
-		
-		if(start[low].start <= endpoint && start[low].end >= endpoint)
-			return low;
-		return high;
-	}
-	
-	public static long dp(Frog[] frog, Frog[] start)
-	{
-		long[] ans = new long[n];
-		for(int idx = 0; idx < n; idx++)
-		{
-			if(ans[frog[idx].end] == 0)
-				ans[idx] = search(frog[idx].end, start);
-		}
-		
-		return getMax(0, n-1, ans);
-	}
-	
-	private static long search(int end, Frog[] start) 
-	{
-		int i = binSearch(end, start);
-		
-		return threeInRange(i, 3, end, start);
-	}
-	
-	public static long threeInRange(int begin, int left, int end, Frog[] start)
-	{
-		if(left <= 0) return 0;
-		long res = 0;
-		for(int i = begin; i < n; i++)
-		{
-			if(start[i].start > end) break;
-			res = Math.max(res, start[i].value + threeInRange(i + 1, left - 1, end, start));
-		}
-		
-		return res;
-	}
-	
-	public static long getMax(int l, int r, long[] ray) 
-	{
-		if(l == r)
-			return ray[l];
-		
-		return Math.max(getMax(l, (l + r) / 2, ray), getMax((l + r) / 2 + 1, r, ray));
-	}*/
-
 	public static int parse(String num)
 	{
 		return Integer.parseInt(num);
