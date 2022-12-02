@@ -2,26 +2,26 @@
 // Problem B
 // 2021 ICPC Greater NY Regional Contest
 
+// Problem Description
 /*
-Problem Description:
-"A Tri-Color Puzzle is a triangular array of hexagon cells with S cells on each side for a
-total of N = (S*(S+1))/2 cells."
+    "A Tri-Color Puzzle is a triangular array of hexagon cells with S cells on each side for a
+    total of N = (S*(S+1))/2 cells."
 
-"To solve the puzzle, each cell must be colored red, green or blue so that for each triplet
-of cells with one cell above and two cells below, either all of the three cells are the same
-color or each of the three cells is a different color."
+    "To solve the puzzle, each cell must be colored red, green or blue so that for each triplet
+    of cells with one cell above and two cells below, either all of the three cells are the same
+    color or each of the three cells is a different color."
 
-Given a set of cells with some cells (or no cells) filled in, output the total 
-number of ways to color all the cells.
+    Given a set of cells with some cells (or no cells) filled in, output the total 
+    number of ways to color all the cells.
 
-The number of cells is at most 190.
+    The number of cells is at most 190.
 */
 
-// Solution Idea:
+// Solution Description
 /*
-Each color can be represented as a 0, 1, or 2.  The resulting valid triplets will always be a multiple of 3 
-and invalid triplets will not be a mutliple of 3 (regardless of color assignment). Use gaussian to determine
-which values depend on each other and how many values are not forced to be a specific color.
+    Each color can be represented as a 0, 1, or 2.  The resulting valid triplets will always be a multiple of 3 
+    and invalid triplets will not be a mutliple of 3 (regardless of color assignment). Use gaussian to determine
+    which values depend on each other and how many values are not forced to be a specific color.
 */
 
 #include <bits/stdc++.h>

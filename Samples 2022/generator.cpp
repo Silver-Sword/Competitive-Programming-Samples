@@ -2,19 +2,21 @@
 // Problem K
 // 2021 ICPC Mid-Atlantic USA Regional Contest
 
+// Problem Description
 /*
-Problem Description:
-You are given a tree with single digit edge weights and a modulo m.  
-Then you are given q queries (q <= 2*10^5), where each query 
-provides a node u and a node v and asks you to print 
-the number created by walking the path from u to v modulo m.
+    You are given a tree with single digit edge weights and a modulo m.  
+    Then you are given q queries (q <= 2*10^5), where each query 
+    provides a node u and a node v and asks you to print 
+    the number created by walking the path from u to v modulo m.
 
-There are up to 2*10^5 nodes.
+    There are up to 2*10^5 nodes.
 */
 
-// Solution Description:
-// Use LCA (lowest common ancestor) to find the highest node in the path and
-// to walk the path quickly from u to v
+// Solution Description
+/*
+    Use LCA (lowest common ancestor) to find the highest node in the path and
+    to walk the path quickly from u to v
+*/
 
 #include <bits/stdc++.h>
 

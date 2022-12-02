@@ -1,19 +1,21 @@
 // Standing Out From the Herd
 // Problem credits: Matt Fontaine
 
+// Problem Description
 /*
-Problem Description
-You are given a set of up to 10^5 lowercase English strings.  The total characters across
-all strings is at most 10^5.  You need to output the "uniqueness factor" of each of the strings.
-The uniqueness-factor is defined as the number of unique substrings in the string that are not
-shared with any of the other strings.
+    You are given a set of up to 10^5 lowercase English strings.  The total characters across
+    all strings is at most 10^5.  You need to output the "uniqueness factor" of each of the strings.
+    The uniqueness-factor is defined as the number of unique substrings in the string that are not
+    shared with any of the other strings.
 */
 
-// Solution Overview:
-// Combine all the strings into one string, using $ between the strings to differentiate.
-// Use a suffix array of the combined string to cacluate the overlapping substrings between
-// each string.  Keep track of the overlap between same and unique strings as well to 
-// update the calculation when sweeping across overlaps within the same string.
+// Solution Description
+/*
+    Combine all the strings into one string, using $ between the strings to differentiate.
+    Use a suffix array of the combined string to cacluate the overlapping substrings between
+    each string.  Keep track of the overlap between same and unique strings as well to 
+    update the calculation when sweeping across overlaps within the same string.
+*/
 
 #include <bits/stdc++.h>
 using namespace std;

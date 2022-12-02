@@ -1,23 +1,24 @@
 // Push a Box
 // Problem credits: Nathan Pinsker
 
+// Problem Description
 /*
-Problem Description
-
-You are given an R by C grid, where '.' is an open cell, '#' is a blocked cell,
-'A' is the starting position of the character, and 'B' is the starting position of the box.
-You are then given q (<= 50,000) queries that each provide a position.  For each of those queries,
-output whether or not the character can push the box to the target query position.  The character
-can push along cardinal directions, but neither the character nor the box can traverse outside
-the grid or over '#' cells.
+    You are given an R by C grid, where '.' is an open cell, '#' is a blocked cell,
+    'A' is the starting position of the character, and 'B' is the starting position of the box.
+    You are then given q (<= 50,000) queries that each provide a position.  For each of those queries,
+    output whether or not the character can push the box to the target query position.  The character
+    can push along cardinal directions, but neither the character nor the box can traverse outside
+    the grid or over '#' cells.
 */
 
 // Solution Description
-// The character can only push a box in a direction if they can stand on the other side.
-// The box may block the character's ability to move to its other side.  Use 2VCCs to 
-// determine whether the character can move around the box.
-// Then bfs from the starting positions to see if the character can push the box to
-// every/any cell in the grid.
+/*
+    The character can only push a box in a direction if they can stand on the other side.
+    The box may block the character's ability to move to its other side.  Use 2VCCs to 
+    determine whether the character can move around the box.
+    Then bfs from the starting positions to see if the character can push the box to
+    every/any cell in the grid.
+*/
 
 #include <bits/stdc++.h>
 

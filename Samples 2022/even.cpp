@@ -2,22 +2,24 @@
 // Problem E
 // 2021 ICPC Mid-Atlantic USA Regional Contest
 
+// Problem Description
 /*
-Problem Description
-You are given a string consisting of lowercase letters between a and f (inclusive).
-Then, you are given queries of two types:
-1. Given an index i and a letter x, change the character at index i to x
-2. Given a range from l to r, print the the number of even substrings between index l and r (inclusive)
+    You are given a string consisting of lowercase letters between a and f (inclusive).
+    Then, you are given queries of two types:
+    1. Given an index i and a letter x, change the character at index i to x
+    2. Given a range from l to r, print the the number of even substrings between index l and r (inclusive)
 
-A substring is even if every letter appears an even number of times within that substring.
+    A substring is even if every letter appears an even number of times within that substring.
 
-The string can have up to 2*10^5 characters and there are up to 2*10^5 queries.
+    The string can have up to 2*10^5 characters and there are up to 2*10^5 queries.
 */
 
-// Solution Idea:
-// Use a segment tree to keep track of updates and calculations.
-// To determine if a substring is even, you can use prefix hashes:
-// if two prefix hashes are the same, the substring between them must be even
+// Solution Description
+/*
+    Use a segment tree to keep track of updates and calculations.
+    To determine if a substring is even, you can use prefix hashes:
+    if two prefix hashes are the same, the substring between them must be even
+*/
 
 #include <bits/stdc++.h>
 using namespace std;

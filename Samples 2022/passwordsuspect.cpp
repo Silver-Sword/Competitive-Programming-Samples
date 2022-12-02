@@ -2,21 +2,23 @@
 // Problem I
 // 2008 World Finals ACM ICPC
 
+// Problem Description
 /*
-Problem Description
-You are given a set of strings and a target length.  Determine the number of strings of
-the target length that contain all of the given set of strings as substrings.  The given
-strings may be overlapping in the resulting string.
+    You are given a set of strings and a target length.  Determine the number of strings of
+    the target length that contain all of the given set of strings as substrings.  The given
+    strings may be overlapping in the resulting string.
 
-The target length is up to 25 and the number of substrings is at most 10.
+    The target length is up to 25 and the number of substrings is at most 10.
 */
 
-// Solution Description:
-// Use Aho Corasick to create a finite automaton which will determine the
-// current state in each of the pattern strings at any point.  Then perform a 
-// bitmask dp on the automaton, such
-// that the dp state is
-// dp(bitmask of satisfied patterns, index of the target string, aho corasick automaton state id) = number of ways to make a target string from here
+// Solution Description
+/*
+    Use Aho Corasick to create a finite automaton which will determine the
+    current state in each of the pattern strings at any point.  Then perform a 
+    bitmask dp on the automaton, such
+    that the dp state is
+    dp(bitmask of satisfied patterns, index of the target string, aho corasick automaton state id) = number of ways to make a target string from here
+*/
 
 #include <bits/stdc++.h>
 using namespace std;

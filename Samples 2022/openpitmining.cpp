@@ -2,21 +2,22 @@
 // Problem B
 // unknown source
 
+// Problem Description
 /* 
-Problem Description
-
-You are given n (<= 200) blocks.  Each block has an associated cost and profit.
-Then, you given m (<= n - 1) dependencies, in which block a blocks block b.
-In other words, you cannot mine block b until you mine block a.
-You must determine what is the maximum possible profit if you mine the optimal set of blocks.
+    You are given n (<= 200) blocks.  Each block has an associated cost and profit.
+    Then, you given m (<= n - 1) dependencies, in which block a blocks block b.
+    In other words, you cannot mine block b until you mine block a.
+    You must determine what is the maximum possible profit if you mine the optimal set of blocks.
 */
 
-// Solution Description: 
-// Use network flow where the source is connected to all blocks
-// which have a positive net profit, the sink is connected to all
-// blocks which have a negative net profit, and the each block that has
-// a dependency has an edge to its dependency.  The maximum profit is the
-// total possible profit minus the flow (cost).
+// Solution Description
+/*
+    Use network flow where the source is connected to all blocks
+    which have a positive net profit, the sink is connected to all
+    blocks which have a negative net profit, and the each block that has
+    a dependency has an edge to its dependency.  The maximum profit is the
+    total possible profit minus the flow (cost).
+*/
 
 #include <bits/stdc++.h>
 using namespace std;

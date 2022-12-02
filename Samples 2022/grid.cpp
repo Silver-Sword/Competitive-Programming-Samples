@@ -2,23 +2,25 @@
 // Problem G
 // ACM ICPC 2012–2013, NEERC, Northern Subregional Contest
 
+// Problem Description
 /*
-The Problem:
-Given integer intersection points between a line and a xy grid, find the original parameters of the grid.
-The parameters of the grid are the starting and ending x/y 
-and the distance between the grid lines (x and y are treated separately).
+    Given integer intersection points between a line and a xy grid, find the original parameters of the grid.
+    The parameters of the grid are the starting and ending x/y 
+    and the distance between the grid lines (x and y are treated separately).
 
-Coordinate points are between positive and negative 10^9.
-The number of points does not exceed 10^5.
+    Coordinate points are between positive and negative 10^9.
+    The number of points does not exceed 10^5.
 */
 
-// Solution Overview: 
-// Each point must lie on either an x line or a y line
-// Any 2 points will be sufficient to determine the line parameters of either the x or y grid
-// Find the answer by brute forcing 2 points and trying to put them into either the x or y grid
-// the first point is the first point overall and brute force the second point by checking them all
-// determine if the y or x group (the other group) is possible after greedily visiting all points from the first group
-// print the solution as soon as you find it
+// Solution Description
+/*
+    Each point must lie on either an x line or a y line
+    Any 2 points will be sufficient to determine the line parameters of either the x or y grid
+    Find the answer by brute forcing 2 points and trying to put them into either the x or y grid
+    the first point is the first point overall and brute force the second point by checking them all
+    determine if the y or x group (the other group) is possible after greedily visiting all points from the first group
+    print the solution as soon as you find it
+*/
 
 #include <bits/stdc++.h>
 using namespace std;

@@ -2,8 +2,8 @@
 // Problem E
 // 2012 NEERC, Northern Subregional Contest
 
+// Problem Description
 /*
-Problem Description
 You start with some number of A to B power strips and some number of B to A power strips.
 In other words, A to B power strips plug into A sockets and then provide some number of B sockets.
 B to A plugs are the opposite.  Each of these power strips have an output number of sockets that
@@ -12,9 +12,11 @@ are given in the input.  You are allowed to chain power strips.
 You start with an A socket.  Output the maximum number of powered A sockets you can have.
 */
 
-// Solution Description:
-// as long as you can, plug in an A to B power strip if there are any B to A power strips left
-// and plug in as many B to A power strips as possible.
+// Solution Description
+/*
+    as long as you can, plug in an A to B power strip if there are any B to A power strips left
+    and plug in as many B to A power strips as possible.
+*/
 
 #include <bits/stdc++.h>
 using namespace std;

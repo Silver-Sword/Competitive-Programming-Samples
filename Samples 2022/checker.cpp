@@ -2,17 +2,19 @@
 // Problem C
 // 2021 ICPC Greater NY Regional Contest
 
+// Problem Description
 /*
-Description: 
-Given a 6 by 6 board and the initial positions of 4 checkers, determine 
-the minimum move set to reach an ending position set. The checkers may move in any 
-of the cardinal directions, but must move until they hit another checker or the 
-end of the board.
+    Given a 6 by 6 board and the initial positions of 4 checkers, determine 
+    the minimum move set to reach an ending position set. The checkers may move in any 
+    of the cardinal directions, but must move until they hit another checker or the 
+    end of the board.
 */
 
-// Solution Idea:
-// Use a bfs (where the states are stored as hashes) to determine the minimum distance
-// store each move to restore the move set used to reach the target positions
+// Solution Description
+/*
+    Use a bfs (where the states are stored as hashes) to determine the minimum distance
+    store each move to restore the move set used to reach the target positions
+*/
 
 #include <bits/stdc++.h>
 
