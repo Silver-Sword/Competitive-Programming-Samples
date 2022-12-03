@@ -1,6 +1,32 @@
-# Problem Tags
+# Welcome
 
-<center>
+These 20 sample programs are intended to give the reader a good idea of the breadth and depth of my
+programming experience as a competitive programmer.  This is not a comprehensive list by any means,
+but should provide a meaningful understanding of my problem solving and C++ abilities.
+
+# What to Expect
+
+Each sample file has a general format:
+```
+// Problem Name
+// Problem Credits
+
+// Problem Description
+/*
+    <description>
+*/
+
+// Solution Description
+/*
+    <description>
+*/
+
+Solution Code
+```
+
+The solution programs are generally between 100-200 lines of code and follow the coding standards for competitive programmers.  The general problem and solution ideas can be seen in the Problem Tags section below.
+
+# Problem Tags
 
 | Problem Title | File Name | Problem Tags |
 | ------------- | --------- | ------------ |
@@ -25,8 +51,7 @@
 | Tri-Color Puzzle | tricolor.cpp | gaussian, counting |
 | Word Puzzle | wordpuzzle.cpp | string, dp |
 
-
-## Tag Acronym Key
+## Acronym Key
 
 | Acronym | Phrase |
 | :-----: | ------ |
