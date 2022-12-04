@@ -35,11 +35,6 @@ int SZ = 6;
 vi dy = {0, 0, 1, -1};
 vi dx = {1, -1, 0, 0};
 
-void printBoard(vii board)
-{
-    for(pii p : board) cout << p.first << " " << p.second << " ";
-}
-
 vii decode(ll board)
 {
     ll bit = 1;
