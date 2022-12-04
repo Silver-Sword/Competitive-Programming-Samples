@@ -59,3 +59,17 @@ The solution programs are generally between 100-200 lines of code and follow the
 | bfs | breadth first search |
 | dp | dynamic programming |
 | MST | minimum spanning tree |
+
+# Credits
+
+Some of the solutions use code from a reference document (kactl).  Link to the document:  
+https://github.com/kth-competitive-programming/kactl/blob/main/kactl.pdf
+
+All C++ solutions utilize part of the starting template from kactl. 
+Each of the following programs uses template code from kactl:
+ - openpitmining.cpp uses Edmonds Karp
+ - passwordsuspect.cpp uses Aho Corasick
+ - pushabox.cpp uses connected components 
+ - spanning.cpp uses the Union Find data structure
+ - standingout.cpp uses the Suffix Array data structure
+ - triangles.cpp uses the Point structure
