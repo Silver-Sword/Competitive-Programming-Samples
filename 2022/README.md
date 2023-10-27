@@ -1,30 +1,6 @@
-# Welcome
+# Welcome to a 2022 Snapshot!
 
-These 20 sample programs are intended to give the reader a good idea of the breadth and depth of my
-programming experience as a competitive programmer.  This is not a comprehensive list by any means,
-but should provide a meaningful understanding of my problem solving and C++ abilities.
-
-# What to Expect
-
-Each sample file has a general format:
-```
-// Problem Name
-// Problem Credits
-
-// Problem Description
-/*
-    <description>
-*/
-
-// Solution Description
-/*
-    <description>
-*/
-
-Solution Code
-```
-
-The solution programs are generally between 100-200 lines of code and follow the coding standards for competitive programmers.  The general problem and solution ideas can be seen in the Problem Tags section below.
+This folder contains a snapshot of the problems I worked on during 2022.
 
 # Problem Tags
 
@@ -61,9 +37,6 @@ The solution programs are generally between 100-200 lines of code and follow the
 | MST | minimum spanning tree |
 
 # Credits
-
-Some of the solutions use code from a reference document (kactl).  Link to the document:  
-https://github.com/kth-competitive-programming/kactl/blob/main/kactl.pdf
 
 All C++ solutions utilize part of the starting template from kactl. 
 Each of the following programs uses template code from kactl:
