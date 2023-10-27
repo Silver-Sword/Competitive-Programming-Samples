@@ -9,9 +9,13 @@ This folder contains a snapshot of all the most recent programs.
 
 | Problem Title | File Name | Problem Tags | Source |
 | ------------- | --------- | ------------ | ------------ |
+| Bad Bunny | bunny.cpp | VCCs, LCA | UCF 2023 | 
 | Candy Rush | candy.cpp | hashing, prefix sums | Latin America 2023 |
+| Diagonals | diagonals.cpp | backtracking, Rollback DSU | SER 2021 |
+| Red Gem | gem.cpp | radial sweep, circle-circle tangents, circle-line intersection | ??? |
 | GPS on a Flat Earth | gps.cpp | segment tree, rotation trick, buildback | Latin America 2023 |
 | Highway Combinatorics | highway.cpp | probabilistic algorithm, divide and conquer | GCPC 2023 |
+| Hospital | hospital.cpp | Dominator Tree, LCA, graph | ??? |
 | Inversion | inversion.cpp | dp | SEERC 2018 |
 | Jellyfish and Math | jellyfish.cpp | bfs, tree |
 | Matrix Queries | matrix.cpp | segment tree, counting | SEERC 2018 |
@@ -19,16 +23,12 @@ This folder contains a snapshot of all the most recent programs.
 | No Prime Differences | primedif.cpp | constructive, greedy, number theory | Codeforces Round 877 |
 | Railroad Sort | railsort.cpp | greedy, constructive | PCSS 2014 |
 | Points and Rectangles | rects.cpp | 2D implicit BIT | 
+| K-Item Shopping Spree | shopping.cpp | FFT under mod | UCF 2017 | 
 | Counting Stairs | stairs.cpp | dp, space save | NEERC 2018 | 
 | Tree XOR | tree.cpp | tree reroot dp | Codeforces Round 899 |
-| | | Dynamic Connectivity | |
-| Diagonals | diagonals.cpp | backtracking, Rollback DSU | SER 2021 |
-| K-Item Shopping Spree | shopping.cpp | FFT under mod | UCF 2017 | 
-| Hospital | hospital.cpp | Dominator Tree, LCA, graph | ??? |
-| Bad Bunny | bunny.cpp | VCCs, LCA | UCF 2023 | 
-| Yet Another Tree Problem | yatp.cpp | convex hull trick, dp, centroid decomp | ??? |
-| Red Gem | gem.cpp | radial sweep, circle-circle tangents, circle-line intersection | ??? |
 | Gravitational Wave Detector | wave.cpp | minkowski sums, radial sort | ??? |
+| Yet Another Tree Problem | yatp.cpp | convex hull trick, dp, centroid decomp | ??? |
+| | | Dynamic Connectivity | |
 
 ## Acronym Key
 
@@ -38,6 +38,7 @@ This folder contains a snapshot of all the most recent programs.
 | BIT | binary index tree |
 | dp | dynamic programming |
 | DSU | disjoint set union |
+| FFT | fast Fourier transform |
 | LCA | lowest common ancestor |
 
 # Credits

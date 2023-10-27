@@ -21,6 +21,8 @@ Each sample file has a general format:
 /*
     <description>
 */
+
+Solution
 ```
 
 The solution programs are generally between 100-200 lines of code and follow the coding standards for competitive programmers. 
