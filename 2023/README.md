@@ -16,7 +16,7 @@ This folder contains a snapshot of all the most recent programs.
 | GPS on a Flat Earth | gps.cpp | segment tree, rotation trick, buildback | Latin America 2023 |
 | Gravitational Wave Detector | gravity.cpp | minkowski sums, radial sort | ??? |
 | Highway Combinatorics | highway.cpp | probabilistic algorithm, divide and conquer | GCPC 2023 |
-| Hospital | hospital.cpp | Dominator Tree, LCA, graph | ??? |
+| Hospital | hospital.cpp | Dominator Tree, LCA | ??? |
 | Inversion | inversion.cpp | dp | SEERC 2018 |
 | Jellyfish and Math | jellyfish.cpp | bfs, tree |
 | K-Item Shopping Spree | kshop.cpp | FFT under mod | UCF 2017 | 
@@ -24,7 +24,7 @@ This folder contains a snapshot of all the most recent programs.
 | Needle | needle.cpp | convex hull, bfs | CTU 2022 |
 | No Prime Differences | primedif.cpp | constructive, greedy, number theory | Codeforces Round 877 |
 | Railroad Sort | railsort.cpp | greedy, constructive | PCSS 2014 |
-| Points and Rectangles | rects.cpp | 2D implicit BIT | 
+| Points and Rectangles | rects.cpp | 2D BIT | 
 | Red Gem | redgem.cpp | radial sweep, circle-circle tangents, circle-line intersection | ??? |
 | Counting Stairs | stairs.cpp | dp, space save | NEERC 2018 | 
 | Tree XOR | tree.cpp | tree reroot dp | Codeforces Round 899 |
@@ -36,10 +36,12 @@ This folder contains a snapshot of all the most recent programs.
 | :-----: | ------ |
 | bfs | breadth first search |
 | BIT | binary index tree |
+| dfs | depth first search |
 | dp | dynamic programming |
 | DSU | disjoint set union |
 | FFT | fast Fourier transform |
 | LCA | lowest common ancestor |
+| VCC | vertex connected components |
 
 # Credits
 
