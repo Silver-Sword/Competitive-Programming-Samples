@@ -1,10 +1,18 @@
-// 
-//
-//
+// GPS on a Flat Earth
+// Latin American Regionals 2023-2024
 
 // Problem Description
 /*
+	Given a set of n towers locations (x, y) and their Manhattan 
+	distances to a target point, d,  determine how many valid 
+	target points exist.
 
+	The Manhattan distance between points (x1, y1) and (x2, y2) 
+	is equal to | x1 - x2 | + | y1 - y2 |.
+
+	1 <= n <= 10^5
+	|x|, |y| <= 10^4
+	0 <= d <= 4*10^4
 */
 
 // Solution Description

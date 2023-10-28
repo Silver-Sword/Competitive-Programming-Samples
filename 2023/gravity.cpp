@@ -1,10 +1,23 @@
-// 
-//
-//
+// Gravitational Wave Detector
+// Latin American Regionals 2022-2023
 
 // Problem Description
 /*
+    There are 2 major power plants within the city. Their areas of influence are
+    represented as convex polygons of m points.
 
+    There are also a set of n points, representing the locations of minor power plants.
+
+    Three points must be chosen, such that the first is within the first major
+    power plant's influence, the second is within the second major plant's influence,
+    and the third is at a minor power plant. Additionally, all three chosen points
+    must be colinear and one of them must be the midpoint of the other two.
+
+    Determine how many of the minor power plants can be chosen.
+
+    3 <= m <= 10^5
+    1 <= n <= 5*10^5
+    The absolute value of any x or y value is up to 10^8
 */
 
 // Solution Description

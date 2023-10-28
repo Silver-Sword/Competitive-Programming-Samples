@@ -1,10 +1,16 @@
-// 
-//
-//
+// Diagonals
+// Southeast USA Regionals 2021
+// https://open.kattis.com/problems/diagonals
 
 // Problem Description
 /*
+    The player is given an empty n by n grid with some restrictions. Each
+    restriction is a number on the corner of one or more cells, representing
+    how many diagonals must touch that corner.  The player must then draw diagonals,
+    such that the restrictions are all satisfied and there are no cycles formed by
+    the diagonals. (Visit the link to see an image of this game.)
 
+    1 <= n <= 8
 */
 
 // Solution Description

@@ -1,10 +1,15 @@
-// 
-//
-//
+// Highway Combinatorics
+// German Regionals 2023
 
 // Problem Description
 /*
+    Create a 2 by w sized grid, such the number of ways
+    to completely fill the grid with 1 by 2 sized cars is congruent 
+    to n mod 10^9+7.  You may choose w and you may prefill the grid with
+    some number of cars.
 
+    0 <= n < 10^9+7
+    1 <= w <= 200
 */
 
 // Solution Description

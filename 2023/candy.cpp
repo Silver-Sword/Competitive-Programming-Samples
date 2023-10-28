@@ -1,10 +1,13 @@
-// 
-//
-//
+// Candy Rush
+// Latin American Regionals 2023-2024
 
 // Problem Description
 /*
+    There are k types of candies. Given a list of n candies on display,
+    find the maximum contiguous substring of candies such that all k candies
+    have the same frequency within the substring. 
 
+    1 <= n, k <= 4*10^5
 */
 
 // Solution Description

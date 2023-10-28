@@ -1,10 +1,18 @@
-// 
-//
-//
+// Jellyfish and Math
+// Codeforces Round 901 (Div. 1)
 
 // Problem Description
 /*
+    Given integers a, b, c, d, and m, you may perform the following
+    operations any number times:
+    a := a & b
+    a := a | b
+    b := a ⊕ b
+    b := b ⊕ m
 
+    Determine the minimum number of operations to satisfy (a,b) = (c,d).
+
+    0 <= a,b,c,d,m < 2^30
 */
 
 // Solution Description

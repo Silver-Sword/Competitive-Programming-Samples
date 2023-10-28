@@ -14,17 +14,17 @@ This folder contains a snapshot of all the most recent programs.
 | Dynamic Connectivity | dc.cpp | rollback DSU, dfs, segment tree | CSES |
 | Diagonals | diagonals.cpp | backtracking, rollback DSU | SER 2021 |
 | GPS on a Flat Earth | gps.cpp | segment tree, rotation trick, buildback | Latin America 2023 |
-| Gravitational Wave Detector | gravity.cpp | minkowski sums, radial sort | ??? |
+| Gravitational Wave Detector | gravity.cpp | minkowski sums, radial sort | Latin America 2022 |
 | Highway Combinatorics | highway.cpp | probabilistic algorithm, divide and conquer | GCPC 2023 |
-| Hospital | hospital.cpp | Dominator Tree, LCA | ??? |
+| Hospital | hospital.cpp | Dominator Tree, LCA | NEERC 2012 |
 | Inversion | inversion.cpp | dp | SEERC 2018 |
-| Jellyfish and Math | jellyfish.cpp | bfs, tree |
+| Jellyfish and Math | jellyfish.cpp | bfs, tree | Codeforces Round 901 |
 | K-Item Shopping Spree | kshop.cpp | FFT under mod | UCF 2017 | 
 | Matrix Queries | matrix.cpp | segment tree, counting | SEERC 2018 |
 | Needle | needle.cpp | convex hull, bfs | CTU 2022 |
 | No Prime Differences | primedif.cpp | constructive, greedy, number theory | Codeforces Round 877 |
 | Railroad Sort | railsort.cpp | greedy, constructive | PCSS 2014 |
-| Points and Rectangles | rects.cpp | 2D BIT | 
+| Points and Rectangles | rects.cpp | 2D BIT | ??? |
 | Red Gem | redgem.cpp | radial sweep, circle-circle tangents, circle-line intersection | ??? |
 | Counting Stairs | stairs.cpp | dp, space save | NEERC 2018 | 
 | Tree XOR | tree.cpp | tree reroot dp | Codeforces Round 899 |

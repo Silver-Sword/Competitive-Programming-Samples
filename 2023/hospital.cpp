@@ -1,10 +1,23 @@
-// 
-//
-//
+// Hospital
+// Northern Subregional 2012-2013
 
 // Problem Description
 /*
+    There are two kinds of nurses: staff nurses and special nurses.
+    If special nurses go on vacation, their role must be filled, but
+    only some nurses have the training and are able to fill the vacancy.  
+    Special nurses may substitute for other special nurses, as long as
+    the end result leaves no special role unfilled.
 
+    You are given a set of n nurses, k of which are special nurses, and
+    a set of valid substitutions for each special nurse. 
+
+    First, determine which special nurses cannot go on vacation.
+
+    Then, determine which pairs of nurses can each go on vacation, but not
+    at the same time.
+
+    1 <= k < n <= 1000
 */
 
 // Solution Description

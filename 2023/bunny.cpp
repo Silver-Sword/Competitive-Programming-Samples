@@ -1,10 +1,15 @@
-// 
-//
-//
+// Bad Bunny
+// UCF Local Contest 2023
 
 // Problem Description
 /*
+    Given an undirected graph with n nodes and m edges, process q queries.
+    Each query is in the form (a, b) and asks: how many nodes are on every 
+    path from node a to node b (including a and b)?
 
+    1 <= n <= 10^5
+    n-1 <= m <= 2*10^5
+    1 <= q <= 10^5
 */
 
 // Solution Description

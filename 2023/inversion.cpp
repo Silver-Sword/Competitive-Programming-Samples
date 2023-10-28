@@ -1,14 +1,25 @@
-// 
-//
-//
+// Inversions
+// Southeastern European Regional 2018
 
 // Problem Description
 /*
+    You are given an undirected graph, that represents a permutation of length n, 
+    such that each edge (u, v) in the graph represents an inversion between the 
+    value at index u and the value at index v in the permutation.
 
+    A set of vertices is independent if no two verticies in the set have an edge
+    between them.
+
+    A set of vertices is dominant if every vertice that does not belong to the set
+    has an edge to a vertice in the set.
+
+    Determine the number of indepedent-dominant sets in the given graph.
+
+    1 <= n <= 100
 */
 
 // Solution Description
-/*
+/*  
 
 */
 

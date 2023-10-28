@@ -1,10 +1,17 @@
-// 
-//
-//
+// Dynamic Connectivity
+// CSES Problem Set
+// https://cses.fi/problemset/task/2133
 
 // Problem Description
 /*
+    Given an undirected graph with n nodes and m edges, process q queries.
+    Queries are in one of two forms:
+        1. Add an edge between node a and node b
+        2. Remove an edge between node a and node b
+    After each query, output the number of disjoint components in the graph.
 
+    2 <= n <= 10^5
+    1 <= m, q <= 10^5
 */
 
 // Solution Description
