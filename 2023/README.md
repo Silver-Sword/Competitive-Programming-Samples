@@ -9,7 +9,7 @@ This folder contains a snapshot of all the most recent programs.
 
 | Problem Title | File Name | Problem Tags | Source |
 | ------------- | --------- | ------------ | ------------ |
-| Bad Bunny | bunny.cpp | VCCs, LCA | UCF 2023 | 
+| Bad Bunny | bunny.cpp | VCCs, LCA | UCF 2023 |
 | Candy Rush | candy.cpp | hashing, prefix sums | Latin America 2023 |
 | Dynamic Connectivity | dc.cpp | rollback DSU, dfs, segment tree | CSES |
 | Diagonals | diagonals.cpp | backtracking, rollback DSU | SER 2021 |
@@ -45,9 +45,18 @@ This folder contains a snapshot of all the most recent programs.
 
 All C++ solutions utilize part of the starting template from kactl. 
 Each of the following programs uses template code from kactl:
- <!-- - openpitmining.cpp uses Edmonds Karp
- - passwordsuspect.cpp uses Aho Corasick
- - pushabox.cpp uses connected components 
- - spanning.cpp uses the Union Find data structure
- - standingout.cpp uses the Suffix Array data structure
- - triangles.cpp uses the Point structure -->
+| Program | kactl Used |
+| ------------- | ------------- |
+| bunny.cpp | RMQ.h, LCA.h, BiconnectedComponents.h |
+| candy.cpp | Hashing.h |
+| dc.cpp | RollbackUF.h |
+| diagonals.cpp | RollbackUF.h |
+| gps.cpp | SegTree.h |
+| gravity.cpp | Point.h, sideOf.h, OnSegment.h, PointInsideHull.h |
+| highway.cpp | euclid.h |
+| hospital.cpp | RMQ.h, LCA.h, DominatorTree.h |
+| kshop.cpp | FastFourierTransform.h, FastFourierTransformMod.h |
+| needle.cpp | Point.h, OnSegment.h, SegmentIntersection.h, ConvexHull.h |
+| rects.cpp | FenwickTree.h, FenwickTree2d.h |
+| redgem.cpp | Point.h, CircleTangents.h, CircleLine.h |
+| yatp.cpp | LineContainer.h, CentroidDecomp.h |
