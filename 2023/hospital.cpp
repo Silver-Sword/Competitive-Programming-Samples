@@ -177,4 +177,4 @@ int main()
     cin.exceptions(cin.failbit);
     solve();
     return 0;
-}[
+}
