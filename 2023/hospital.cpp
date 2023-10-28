@@ -11,8 +11,6 @@ typedef vector<pii> vii;
 #define sz(x) (int)(x).size()
 #define rep(i,a,b) for(int i = a; i < (b); i++)
 
-const int DEBUG = false;
-
 void assertBad(int state)
 {
     if(!state)
@@ -76,7 +74,6 @@ struct DominatorTree {
                 label = rlabel = sdom = dom = par = bes = vi(n);
         }
         void add_edge(int a, int b) {
-        if(DEBUG) cout << "\tadd edge " << a << "=>" << b << nl;
         adj[a].push_back(b); }
         int get(int x) {
                 if (par[x] != x) {
@@ -122,7 +119,6 @@ struct DominatorTree {
 void solve()
 {
     int n, k; cin >> n >> k;
-    if(DEBUG) cout << "n=" << n << ", k=" <<k << endl;
     DominatorTree dt (n+1);
 
     int u, v;
@@ -139,27 +135,6 @@ void solve()
         }
     }
     dt.init(0);
-
-    if(DEBUG)
-    {
-        cout << "LABELS" << nl;
-        for(int i : dt.label)
-            cout << i << " ";
-        cout << nl;
-        cout << "DOMINATORS" << nl;
-        for(int i : dt.dom)
-            cout << i << " ";
-        cout << nl;
-        cout << "ANS EDGES" << nl;
-        for(int i = 0; i < sz(dt.ans); i++)
-        {
-            cout << i << ": ";
-            for(int u : dt.ans[i])
-                cout << u << " ";
-            cout << nl;
-        }
-        cout << endl;
-    }
 
     LCA lca (dt.ans);
 

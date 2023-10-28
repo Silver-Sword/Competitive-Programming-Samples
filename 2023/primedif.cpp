@@ -17,8 +17,6 @@ typedef long double ld;
 #define nl '\n'
 #define all(x) begin(x), end(x)
 
-const int DEBUG = false;
-
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);
@@ -44,7 +42,6 @@ int main()
             rep(j,0,m) cout << arr[idx][j] << " ";
             cout << nl;
         } 
-        if(DEBUG) cout << nl;
     }
 
     return 0;

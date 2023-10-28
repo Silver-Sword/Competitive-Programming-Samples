@@ -14,8 +14,6 @@ typedef vector<vii> vvii;
 #define sz(x) (int)(x).size()
 #define all(x) begin(x), end(x)
 
-const int DEBUG = false;
-
 template<class T> int sgn(T x) {return (x > 0) - (x < 0);}
 template<class T>
 struct Point
@@ -107,7 +105,6 @@ void solve()
         for(int j = 0; j < sz(cloud[i]); j++)
         {
             key[cloud[i][j]] = sz(key);
-            if(DEBUG) cout << cloud[i][j] << " key: " << key[cloud[i][j]] << nl;
         }
     
     // make graph
@@ -119,7 +116,6 @@ void solve()
         double d = (a-b).dist();
         adj[u].push_back({v, d});
         adj[v].push_back({u, d});
-        if(DEBUG) cout << "\tadd edge " << u << "<=>" << v <<" with weight "<< d << nl;
     };
 
     auto good = [&] (P &a, P &b) -> bool

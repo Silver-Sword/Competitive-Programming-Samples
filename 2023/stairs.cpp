@@ -12,15 +12,11 @@ typedef vector<vl> vvl;
 
 const ll MOD = 998'244'353;
 const int MAXN = 2e5, SQRTN = 450, BLANK = -1;
-// const int MAXN = 10000, SQRTN = 100, BLANK = -1;
 vl ans (MAXN+1);
 vvl dpWays(SQRTN+1, vl ((MAXN >> 1)+1, BLANK));
 
-const int DEBUG = true;
-
 ll solve(int col_left, int block_left)
 {
-    // if(DEBUG) cout << "\tsolve(col_left=" << col_left << ", block_left=" << block_left << ")" << endl;
     if(block_left == 0 || col_left == 1) return 1;
     else if(!col_left) return 0;
     else if(dpWays[col_left][block_left] != BLANK) return dpWays[col_left][block_left];
@@ -28,7 +24,6 @@ ll solve(int col_left, int block_left)
     ll ans = solve(col_left - 1, block_left);
     if(col_left <= block_left) ans = (ans + solve(col_left, block_left - col_left)) % MOD;
 
-    // if(DEBUG) cout << "\tdp[col=" << col_left << "][blocks=" << block_left << "] = " << ans << nl;
     return dpWays[col_left][block_left] = ans;
 }
  

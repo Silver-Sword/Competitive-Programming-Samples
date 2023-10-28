@@ -19,7 +19,6 @@ typedef vector<vl> vvl;
 #define all(x) begin(x), end(x)
 #define sz(x) (int)(x).size()
 
-const int DEBUG = true;
 const int INF = 1e9;
 const int CAP = 1552;
 // const ld EPS = 1e-9;

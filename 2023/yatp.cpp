@@ -16,8 +16,6 @@ vector<vector<pii>> adj;
 vector<bool> is_removed;
 vector<int> subtree_size;
 
-const int DEBUG = false;
-
 struct Line {
         mutable ll k, m, p;
         bool operator<(const Line& o) const { return k < o.k; }
@@ -86,14 +84,12 @@ vl ans;
 void build_centroid_decomp(int node, vl &pen)
 {
     int centroid = get_centroid(node, get_subtree_size(node));
-    if(DEBUG) cout << "\tbuild centroid decomp(node=" << centroid << ")" << nl;
 
     // do something
     LineContainer cht;
     auto dfs1 = [&] (int cur, int par, ll depth, auto&& dfs1) -> void
     {
         cht.add(pen[cur], depth);
-        if(DEBUG) cout << "\t\t\tupdate line with m=" << pen[cur] << ", b=" << depth << nl;
 
         for(pii next : adj[cur])
         {
@@ -106,7 +102,6 @@ void build_centroid_decomp(int node, vl &pen)
     auto dfs2 = [&] (int cur, int par, ll depth, auto &&dfs2) -> void
     {
         ans[cur] = min(ans[cur], cht.query(pen[cur]) + depth);
-        if(DEBUG) cout << "\t\tupdate ans[node=" << cur << "] with candidate " << cht.query(pen[cur]) << " + " << depth << nl;
 
         for(pii &next : adj[cur])
         {

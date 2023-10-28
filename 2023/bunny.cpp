@@ -88,7 +88,6 @@ const int DEBUG = false;
 void solve()
 {
     int n, m, u, v; cin >> n >> m;
-    if(DEBUG) cout << "n=" << n << ", m=" << m << nl;
     ed.resize(n);
     vii edges;
     for(int i = 0; i < m; i++)
@@ -107,8 +106,6 @@ void solve()
     vi ecc_id (m);
     vvi eccs (n);
 
-    cout << "about to build meta graph" << endl;
-
     auto buildmetagraph = [&] ()
     {
         vi used (m);
@@ -117,7 +114,6 @@ void solve()
             // do some counting
             for(int eid : edgelist)
             {
-                if(DEBUG) cout << "\tedge " << eid << " is in vcc " << counter << endl;
                 eccs[edges[eid].first].push_back(counter);
                 eccs[edges[eid].second].push_back(counter);
                 used[eid] = true;
@@ -125,29 +121,14 @@ void solve()
             }
             counter++;
         });
-        cout << "ran vccs" << endl;
 
         for(int i = 0; i < n; i++)
         {
             eccs[i].erase(unique(all(eccs[i])), eccs[i].end());
         }
 
-
-        if(DEBUG)
-        {
-            cout << "ECCs: " << nl;
-            for(int i = 0; i < n; i++)
-            {
-                cout << "Node " << i << ": ";
-                for(int ecc : eccs[i]) cout << ecc << " ";
-                cout << nl;
-            }
-            cout <<endl;
-        }
-
         for(int i = 0; i < n; i++)
         {
-            assert(!eccs[i].empty());
             if(sz(eccs[i]) == 1) // in 1 vcc
             {
                 id[i] = eccs[i].front();
@@ -156,7 +137,6 @@ void solve()
             {
                 id[i] = counter++;
             }
-            if(DEBUG) cout << "\tid[" << i << "]=" << id[i] << endl;
         }
 
         metagraph = vvi (counter);
@@ -172,11 +152,6 @@ void solve()
                 addEdge(id[e.first], ecc_id[i]);
             if(id[e.second] != ecc_id[i])
                 addEdge(id[e.second], ecc_id[i]);
-
-            // if(id[e.first] == id[e.second]) continue;
-            // metagraph[id[e.first]].push_back(id[e.second]);
-            // metagraph[id[e.second]].push_back(id[e.first]);
-            // if(DEBUG) cout << "\tadding edge " << id[e.first] << ", " << id[e.second] << " to metagraph" << endl;
         }
 
         for(int i = 0; i < sz(metagraph); i++)
@@ -184,33 +159,9 @@ void solve()
             sort(all(metagraph[i]));
             metagraph[i].erase(unique(all(metagraph[i])), metagraph[i].end());
         }
-
-        // for(int i = 0; i < n; i++)
-        // {
-        //     if(sz(eccs[i]) == 1) continue;
-        //     for(int ecc : eccs[i])
-        //     {
-        //         metagraph[ecc].push_back(id[i]);
-        //         metagraph[id[i]].push_back(ecc);
-        //         if(DEBUG) cout << "\tadding edge " << ecc << ", " << id[i] << " to metagraph" << endl;
-        //     }
-        // }
-
-        if(DEBUG)
-        {
-            cout << "MetaGraph:" << nl;
-            for(int i = 0; i < sz(metagraph); i++)
-            {
-                cout << i << ": ";
-                for(int j : metagraph[i])
-                    cout << j << " ";
-                cout << nl;
-            }
-        }
     };
 
     buildmetagraph();
-    cout << "made metagraph" << endl;
     LCA lca (metagraph);
 
     int q; cin >> q;
@@ -218,11 +169,6 @@ void solve()
     {
         int s, t; cin >> s >> t; s--, t--;
         int dist = lca.dist(id[s], id[t]);
-        if((dist & 1) && sz(eccs[s]) > 1)
-        {
-            // if(sz(eccs[t]) > 1) dist--;
-            // dist++;
-        }
         if(!(dist & 1) && sz(eccs[s]) > 1 && sz(eccs[t]) > 1)
             dist--;
         dist >>= 1;

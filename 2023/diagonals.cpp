@@ -11,8 +11,6 @@ typedef vector<vi> vvi;
 #define sz(x) (int)(x).size()
 #define all(x) begin(x), end(x)
 
-const int DEBUG = false;
-
 struct RollbackUF {
     vi e; vector<pii> st;
     RollbackUF(int n) : e(n, -1) {}
@@ -42,7 +40,6 @@ int n;
 
 int key(int r, int c)
 {
-    if(DEBUG) cout << "\t\t(r=" << r << ", c=" << c << ")=>" << (r * (n+1) + c) << endl;
     return (r * (n+1) + c);
 }
 
@@ -83,17 +80,14 @@ bool recurse(int idx, RollbackUF &uf)
         if(grid[r1][c1] != '+') grid[r1][c1]++;
         if(grid[r2][c2] != '+') grid[r2][c2]++;
         cand[r][c]++, cand[r][c+1]++, cand[r+1][c]++, cand[r+1][c+1]++;
-        if(DEBUG) cout << "\t\trollback to " << time << endl;
         uf.rollback(time);
     };
 
     auto process = [&] (int r1, int c1, int r2, int c2, char ch) -> bool
     {
-        if(DEBUG) cout << "\t\tr1=" << r1 << ", c1=" << c1 << ", r2=" << r2 << ", c2=" << c2 << ", ch=" << ch << endl;
         if(grid[r1][c1] != '0' && grid[r2][c2] != '0' && uf.find(key(r1, c1)) != uf.find(key(r2, c2)))
         {
             int time = uf.time();
-            if(DEBUG) cout << "\tupdate r=" << r << " c=" << c << " with " << ch << " (" << r1 << ", " << c1 <<") and (" << r2 << ", " << c2 << ") " << endl;
             update(r1, c1, r2, c2);
             ans[r][c] = ch;
             if(recurse(idx + 1, uf))
@@ -106,13 +100,10 @@ bool recurse(int idx, RollbackUF &uf)
     };
 
     // try forward
-    if(DEBUG) cout << "recurse r=" << r << ", c=" << c << endl;
     if(canLeave(r, c+1) && canLeave(r+1, c) && process(r, c, r+1, c+1, '\\')) return true;
-    if(DEBUG) cout << "recurse r=" << r << ", c=" << c << endl;
 
     // // try backward
     if(canLeave(r, c) && canLeave(r+1, c+1) && process(r, c+1, r+1, c, '/')) return true;
-    if(DEBUG) cout << "recurse r=" << r << ", c=" << c << endl;
 
     // none
     return false;
@@ -144,7 +135,6 @@ void solve()
     sort(all(order));
     reverse(all(order));
     RollbackUF uf ((n+1)*(n+1));
-    if(DEBUG) cout << "rollback size=" << (n+1)*(n+1) << endl;
 
     recurse(0, uf);
 

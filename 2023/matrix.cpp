@@ -12,7 +12,6 @@ typedef long long ll;
 typedef vector<ll> vl;
 typedef vector<int> vi;
 
-const int DEBUG = false;
 int K;
 
 const int MAXN = 20;

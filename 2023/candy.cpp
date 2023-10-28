@@ -53,7 +53,7 @@ vector<H> getHashes(string &str, int length)
 
 H hashString(string &s) {H h{}; for(char c : s) h = h*C+c; return h;}
 
-const int MAX = 1e6, DEBUG = false;
+const int MAX = 1e6;
 vector<H> pw (MAX);
 void solve()
 {
@@ -61,7 +61,6 @@ void solve()
     map<H, int> hash;
     H full (0);
     for(int i = 0; i < k; i++) full = full + pw[i];
-    if(DEBUG) cout << "full=" << full.get() << nl;
 
     vi atTarget (n+1, k);
     vi freq(k);
@@ -82,10 +81,6 @@ void solve()
         {
             h = h - full;
             cur++;
-        }
-        if(DEBUG)
-        {
-            cout << "cur=" << cur << ", hash=" << h.get() << nl;
         }
 
         if(hash.find(h) != hash.end())

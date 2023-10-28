@@ -12,7 +12,6 @@ typedef vector<ll> vl;
 #define all(x) begin(x), end(x)
 #define sz(x) (int)(x).size()
 
-const int DEBUG = false;
 int n;
 
 vi buildPerm(vvi &adj)
@@ -50,7 +49,6 @@ ll recurse(int idx, vi &perm)
     }
 
     if(ran_min >= (int) 1e9) return dp[idx] = 1;
-    if(DEBUG) cout << "dp[idx=" << idx << "] = " << ans << nl;
     return dp[idx] = ans;
 }
 
@@ -77,11 +75,6 @@ void solve()
     }
 
     vi perm = buildPerm(adj); 
-
-    if(DEBUG)
-    {
-        cout << "PERM: "; for(int p : perm) cout << p + 1 << " "; cout << nl;
-    }
 
     // must take local min
     int prev_min = 1e9;

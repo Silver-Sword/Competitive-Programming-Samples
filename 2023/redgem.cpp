@@ -5,7 +5,6 @@ using namespace std;
 #define nl '\n'
 #define all(x) begin(x), end(x)
 
-const int DEBUG = false;
 const double EPS = 1e-8;
 
 template <class T> int sgn(T x) { return (x > 0) - (x < 0); }
@@ -76,15 +75,9 @@ void solve()
         cin >> xo >> yo >> ro;
         orange.push_back({ro, P (xo, yo)});
     }
-    if(DEBUG) cout << "Red Gem is " << red << ", r=" << r << nl;
 
     auto getCirclePoint = [&] (P e, P s) // note the backwards s and e
     {
-        if(DEBUG && circleLine(unit, p, s, e).empty())
-        {
-            cout << "GOT EMPTY: " << "[Circle: " << unit << ", r=" << p << "], [Line: s=" << s << ", e=" << e<< "]" << endl;
-            assert(false);
-        }
         return circleLine(unit, p, s, e)[0];
     };
 
@@ -97,16 +90,9 @@ void solve()
 
         if(((red-orange[i].second).dist2() - rd*rd) <= EPS) // check tangent case
         {
-            if(DEBUG) cout << "Tangent Circles! Oh no!" << nl;
-
             pair<P, P> tmp = tangents(red, r, orange[i].second, -orange[i].first)[0];
             P a = tmp.first, b;
             P slope = red-orange[i].second;
-
-            if(DEBUG)
-            {
-                cout << "\tslope=" << slope << nl;
-            }
 
             if(fabs(slope.x) <= EPS)
                 b = P(a.x-slope.y, a.y);
@@ -118,18 +104,8 @@ void solve()
             // touching, line is perp to 2 centers
             tang = {{a, b}, {b, a}};
         }
-
         else
             tang = tangents(red, -r, orange[i].second, orange[i].first);
-
-        if(DEBUG)
-        {
-            cout << "\tTangents to " << orange[i].second << ", r=" << orange[i].first << nl;
-            for(int j = 0; j < sz(tang); j++)
-            {
-                cout << "\t\t" << tang[j].first << ", " << tang[j].second << "| inter: " << getCirclePoint(tang[j].first, tang[j].second) << ", theta=" << getCirclePoint(tang[j].first, tang[j].second).angle() << nl;
-            }
-        }
 
         P a = getCirclePoint(tang[0].first, tang[0].second);
         P b = getCirclePoint(tang[1].first, tang[1].second);
@@ -150,22 +126,11 @@ void solve()
 
     // sort(all(q), compare);
     sort(all(q));
-    if(DEBUG)
-    {
-        cout << "Angles: " << nl;
-        for(int i = 0; i < sz(q); i++)
-        {
-            // cout << "\t" << q[i].second << "|" << q[i].first << "|" << q[i].first.angle() << nl;
-            cout << "\t" << q[i].second << "|" << q[i].first << nl;
-        }
-    }
 
     long double e = q[0].first + 2 * PI;
     long double total = 0;
     long double cur = q[0].first;
     int count = 0;
-
-    if(DEBUG) cout << "e=" << e << endl;
 
     // go to next one
     for(int i = 0; i < sz(q); i++)
@@ -174,20 +139,12 @@ void solve()
         if(count == 0) total += q[i].first - cur;
         cur = q[i].first;
         count += q[i].second;
-        assert(count <= 0);
-        if(DEBUG) cout << "\t\tafter angle " << q[i].first << ", total=" << total << ", count=" << count << endl;
     }
 
     // go to e
     if(cur < e && count >= 0)
     {
         total += e - cur;
-    }
-    if(DEBUG)
-    {
-        cout << "total=" << total << nl;
-        cout << "PI=" << PI << nl;
-        cout << total / PI << nl;
     }
     cout << fixed << setprecision(4) << (total / (2 * PI)) << nl;
 }

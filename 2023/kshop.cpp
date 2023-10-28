@@ -10,7 +10,7 @@ typedef long long ll;
 #define all(x) begin(x), end(x)
 
 const int MOD = 997;
-const int DEBUG = false, CAP = 500 * 100 + 1, FORCE = false;
+const int CAP = 500 * 100 + 1;
 
 typedef complex<double> C;
 typedef vector<double> vd;
@@ -79,64 +79,30 @@ void solve()
 {
     int n; vl freq;
     double d; string str;
-    if(FORCE)
+
+    cin >> n;
+
+    for(int i = 0; i < n;i++)
     {
-        n = 10000;
-        freq = vl (2);
-        freq[1] = n;
-    }
-    else
-    {
-        cin >> n;
-    
-        for(int i = 0; i < n;i++)
-        {
-            cin >> str;
-            str = str.substr(0, sz(str) - 3) + str.substr(sz(str) - 2);
-            int idx = stoi(str);
-            if(idx >= sz(freq)) freq.resize(idx + 1);
-            freq[idx]++;
-        }
-    }
-    if(DEBUG)
-    {
-        cout << "Freq before mult: " << nl;
-        for(ll l : freq) cout << l << " "; cout << nl;
+        cin >> str;
+        str = str.substr(0, sz(str) - 3) + str.substr(sz(str) - 2);
+        int idx = stoi(str);
+        if(idx >= sz(freq)) freq.resize(idx + 1);
+        freq[idx]++;
     }
 
     int k, q; 
-    if(FORCE)
-    {
-        k = 10000;
-        q = 1;
-    }
-    else
-        cin >> k >> q;
+    cin >> k >> q;
 
     freq = mult(freq, k);
-
-    if(DEBUG)
-    {
-        cout << "Freq after mult: " << nl;
-        for(int i = 0; i < sz(freq); i++)
-            if(freq[i])
-                cout << i << ": " << freq[i] << nl;
-        cout << nl;
-    }
-
     freq.resize(CAP);
+
     int idx;
     while(q--)
     {
-        if(FORCE)
-            idx = min(CAP - 1, k);
-        else
-        {
-            cin >> str;
-            str = str.substr(0, sz(str) - 3) + str.substr(sz(str) - 2);
-            idx = stoi(str);
-        }
-        assert(idx < CAP && idx > 0);
+        cin >> str;
+        str = str.substr(0, sz(str) - 3) + str.substr(sz(str) - 2);
+        idx = stoi(str);
         cout << freq[idx] << nl;
     }
 

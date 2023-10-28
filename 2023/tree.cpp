@@ -10,7 +10,7 @@ typedef vector<vl> vvl;
 #define nl '\n'
 #define sz(x) (int)(x).size()
 
-const int DEBUG = false, BLANK = -1, DIGIT = 21;
+const int BLANK = -1, DIGIT = 21;
 
 vl numChildren, arr, ans;
 vvl onCost, offCost;
@@ -19,13 +19,11 @@ int n;
 
 void first_dfs(int node, int par)
 {
-    if(DEBUG) cout << "first_dfs(node=" << node << ", par=" << par << ")" << nl;
     numChildren[node] = 0;
 
     for(int next : adj[node])
     {
         if(next == par) continue;
-        if(DEBUG) cout << "\t\tnode=" << node << "=>next=" << next << nl;
         first_dfs(next, node);
         numChildren[node] += numChildren[next] + 1;
 
@@ -44,7 +42,6 @@ void first_dfs(int node, int par)
         }
     }
 
-    if(DEBUG) cout << "\tnum children of node " << node << " is " << numChildren[node] << nl;
     for(int i = 0, d = 1; i <= DIGIT; i++, d <<= 1)
     {
         if(arr[node] & d)
@@ -55,13 +52,6 @@ void first_dfs(int node, int par)
         {
             onCost[node][i] += (numChildren[node] + 1) * d;
         }
-    }
-
-    if(DEBUG)
-    {
-        cout << "\tNode " << node << " result of first dfs: " << nl;
-        cout << "\t\ton_cost: "; for(ll l : onCost[node]) cout << l << " "; cout << nl;
-        cout << "\t\toff_cost: "; for(ll l : offCost[node]) cout << l << " "; cout << nl;
     }
 }
 
@@ -85,18 +75,6 @@ void second_dfs(int node, int par, vl &par_on_cost, vl &par_off_cost)
             off_cost[i] += par_off_cost[i];
         }
     }
-
-    if(DEBUG)
-    {
-        cout << "second_dfs(node=" << node << ", par=" << par << ")" << nl;
-        cout << "\tpar_on_cost: "; for(ll l : par_on_cost) cout << l << " "; cout << nl;
-        cout << "\tpar_off_cost: "; for(ll l : par_off_cost) cout << l << " "; cout << nl;
-    }
-    if(DEBUG)
-    {
-        cout << "\tmy_on_cost: "; for(ll l : on_cost) cout << l << " "; cout << nl;
-        cout << "\tmy_off_cost: "; for(ll l : off_cost) cout << l << " "; cout << nl;
-    }
     
     // calc my cost
     ll my_cost = 0;
@@ -112,12 +90,6 @@ void second_dfs(int node, int par, vl &par_on_cost, vl &par_off_cost)
         if(next == par) continue;
         vl next_on_cost (on_cost);
         vl next_off_cost (off_cost);
-
-        // for(int i = 0; i <= DIGIT; i++)
-        // {
-        //     next_on_cost[i] -= onCost[next][i];
-        //     next_off_cost[i] -= offCost[next][i];
-        // }
 
         for(int i = 0, d = 1; i <= DIGIT; i++, d <<= 1)
         {
@@ -139,7 +111,6 @@ void second_dfs(int node, int par, vl &par_on_cost, vl &par_off_cost)
 void solve()
 {
     cin >> n;
-    if(DEBUG) cout << "solve(n=" << n << ")" << endl;
     numChildren = vl (n);
     arr = vl (n);
     ans = vl (n);
@@ -159,7 +130,6 @@ void solve()
     }
 
     first_dfs(0, 0);
-    if(DEBUG) cout << nl;
 
     vl unit (DIGIT+1, 0);
     second_dfs(0, 0, unit, unit);

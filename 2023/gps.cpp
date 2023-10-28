@@ -12,7 +12,6 @@ typedef long long ll;
 typedef pair<int, int> pii;
 typedef vector<vi> vvi;
 
-const int DEBUG = false;
 const int MAX = 1e5, OFFSET = MAX;
 
 inline int split(int tl, int tr) {
@@ -104,19 +103,10 @@ void solve()
 		q.push_back({{y1, 1}, {x1, x2}});
 		q.push_back({{y2+1, -1}, {x1, x2}});
 
-		if(DEBUG)
-		{
-			cout << "Square x1=" << x1 << ", y1=" << y1 << ", x2=" << x2 << ", y2=" << y2 << endl;
-		}
-
 		if(y1 + 1 < y2 && x1 + 1 < x2)
 		{
 			q.push_back({{y1+1, -1}, {x1+1, x2-1}});
 			q.push_back({{y2, 1}, {x1+1, x2-1}});
-			if(DEBUG)
-			{
-				cout << "\tSquare2 x1=" << x1+1 << ", y1=" << y1+1 << ", x2=" << x2-1 << ", y2=" << y2-1 << nl;
-			}
 		}
 	}
 	sort(all(q));
@@ -128,10 +118,6 @@ void solve()
 	ans.reserve(16'000);
 	auto convert = [&] (int i, int j) -> pii
 	{
-		if(DEBUG)
-		{
-			cout << "\t\t\tconverting " << i << ", " << j << nl;
-		}
 		int x = (i+j)/2;
 		int y = i - x;
 
@@ -141,7 +127,6 @@ void solve()
 	{
 		vi x;
 		tree.query(n, x);
-		if(DEBUG) cout << "\t\t\textraction returned " << sz(x) << " points" << nl;
 		if(x.empty()) return;
 
 		for(int i = y1; i < y2; i++)
@@ -170,10 +155,6 @@ void solve()
 			int e = q[fr].second.second;
 			fr++;
 
-			if(DEBUG)
-			{
-				cout << "\tupdate range " << s << " to " << e << " with " << dif << endl;
-			}
 			tree.update(s+OFFSET, e+OFFSET, dif);
 		}
 

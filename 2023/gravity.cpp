@@ -70,7 +70,6 @@ bool inHull(const vector<P>& l, P p, bool strict = true) {
 }
 
 typedef Point<ll> Pl;
-const int DEBUG = false;
 
 Pl addVectors(vector<Pl> &poly, ll &f, vector<Pl> &vects)
 {
@@ -87,7 +86,6 @@ Pl addVectors(vector<Pl> &poly, ll &f, vector<Pl> &vects)
         vects.push_back((poly[(i+1)%sz(poly)] - poly[i]) * f);
     }
 
-    if(DEBUG) cout << "\t\tlo=" << lo << nl;
     return lo;
 }
 
@@ -123,15 +121,7 @@ vector<Pl> makeHull(vector<Pl> &vects, Pl &start)
         hull.push_back(Pl(x, y));
         x += p.x; y += p.y;
     }
-
-    if(DEBUG)
-    {
-        cout << "\tVectors: ";
-        for(Pl p : vects) cout << p << " ";
-        cout << " ==> Hull: ";
-        for(Pl p : hull) cout << p << " ";
-        cout << nl;
-    }
+    
     return hull;
 }
 
@@ -157,12 +147,6 @@ void solve()
         poly2.push_back(Pl(x, y));
     }
 
-    if(DEBUG)
-    {
-        cout << "Poly1: "; for(Pl p : poly1) cout << p << " "; cout << nl;
-        cout << "Poly2: "; for(Pl p : poly2) cout << p << " "; cout << nl;      
-    }
-
     cin >> n;
     vector<Pl> cand;
     for(int i = 0; i < n; i++)
@@ -179,7 +163,6 @@ void solve()
             if(ans[i]) continue; // already known valid
 
             // point in hull checks
-            if(DEBUG) cout << "\t\tchecking for point " << cand[i] << " in hull (res=" << inHull(hull, cand[i], false) << ")" << nl;
             if(inHull(hull, cand[i], false))
                 ans[i] = true;
         }
@@ -191,8 +174,6 @@ void solve()
         Pl offset;
         offset = offset + addVectors(poly1, f1, vects);
         offset = offset + addVectors(poly2, f2, vects);
-        if(DEBUG) cout << "\t\toffset=" << offset << nl;
-        // Pl offset = poly1[0] + poly2[0];
         vector<Pl> hull = makeHull(vects, offset);
         return hull;
     };

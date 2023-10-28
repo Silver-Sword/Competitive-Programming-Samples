@@ -57,7 +57,6 @@ struct Tree
     }
 };
 
-const int DEBUG = false;
 void solve()
 {
     int n, m, k; cin >> n >> m >> k;
@@ -70,7 +69,6 @@ void solve()
 
     auto turnOn = [&] (int u, int v, int time)
     {
-        assert(u <= v);
         if(idx.find({u, v}) == idx.end())
         {
             idx[{u, v}] = sz(idx);
@@ -78,21 +76,14 @@ void solve()
             ed.push_back({u, v});
         }
         int id = idx[{u, v}];
-        if(DEBUG) cout << "(" << u << ", " << v << ") set to " << id << nl;
-        assert(timeOn[id] == -1);
         timeOn[id] = time;
     };
 
     auto turnOff = [&] (int u, int v, int time)
     {
-        assert(u <= v);
-        assert(idx.find({u, v}) != idx.end());
-
         int id = idx[{u, v}];
-        assert(timeOn[id] != -1);
         int s = timeOn[id];
         root->update(s, time, id);
-        if(DEBUG) cout << "edge " << id << " added btwn times " << s << " and " << time << nl;
 
         timeOn[id] = -1;
     };
@@ -129,7 +120,6 @@ void solve()
     auto dfs = [&] (Tree *cur, auto &&dfs) -> void
     {
         int cur_time = dsu.time();
-        if(DEBUG) cout << "\tin tree L=" << cur->L << ", R=" << cur->R << " with time=" << cur_time << nl;
         // turn everything on
         for(int e : cur->on)
             dsu.join(ed[e].first, ed[e].second);
@@ -149,7 +139,6 @@ void solve()
     };
 
     // dfs
-    if(DEBUG) cout << "DFS" << nl;
     dfs(root, dfs);
     cout << nl;
 }

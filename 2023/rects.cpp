@@ -54,8 +54,6 @@ struct FT2 {
 	}
 };
 
-const int DEBUG = false;
-
 void solve()
 {
     int q; cin >> q;
@@ -126,18 +124,9 @@ void solve()
             
             // query 
             ans += rect.query(x+1, y+1);
-            
-            if(DEBUG) 
-            {
-                cout << "\tQuery pt at position " << x+1 << ", " << y+1 << " is " << rect.query(x+1, y+1) << nl;
-                cout << "\tand at pos " << x << ", " << y+1 << " is " << rect.query(x, y+1) << nl;
-                cout << "\tand at pos " << x+1 << ", " << y << " is " << rect.query(x+1, y) << nl;
-                cout << "\tand at pos " << x << ", " << y << " is " << rect.query(x, y) << nl;
-            }
             cout << ans << nl;
 
             // update
-            if(DEBUG) cout << "\tupdate point by 1 at pos " << x << ", " << y << nl;
             pt.update(x,y,1);
         }
         else // rectangle
@@ -149,10 +138,6 @@ void solve()
                  - pt.query(xe+1, ys)
                  - pt.query(xs, ye+1)
                  + pt.query(xs, ys);
-            if(DEBUG) cout << "\tQuery pt at position " << xe+1 << ", " << ye+1 << " is " << pt.query(xe+1, ye+1) 
-                            << " and at pos " << xs << ", " << ys << " is " << pt.query(xs, ys) 
-                            << " and at pos " << xs << ", " << ye+1 << " is " << pt.query(xs, ye+1)
-                            << " and at pos " << xe+1 << ", " << ys << " is " << pt.query(xe+1, ys) << nl;
             cout << ans << nl;
 
             // update
