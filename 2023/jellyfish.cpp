@@ -13,6 +13,7 @@
     Determine the minimum number of operations to satisfy (a,b) = (c,d).
 
     0 <= a,b,c,d,m < 2^30
+    There are up to 10^5 testcases, t
 */
 
 // Solution Description
@@ -20,6 +21,9 @@
     The solution includes running a bfs on all reachable values. However,
     using sets for each bfs is too slow for this particular problem. In order 
     to bypass this limitation, the valid move set must be precomputed.
+
+    O(t)
+    Note that the precomp is about 5^8 operations, and is constant.
 */
 
 #pragma GCC optimize("O2,O3,unroll-loops")

@@ -21,6 +21,8 @@
     Use circle-circle tangents between the red and orange circles to find all 
     the angles along the purple circumference that are blocked.  Then, perform a
     radial sweep to process all angle ranges.
+
+    O(n log n)
 */
 
 #include <bits/stdc++.h>
@@ -178,7 +180,6 @@ int main()
 {
     cin.tie(0)->sync_with_stdio(0);
     cin.exceptions(cin.failbit);
-
 
     while(cin >> n >> p >> x >> y >> r, n)
         solve();

@@ -11,6 +11,8 @@
     to end with an ordered permutation.
     
     1 <= n <= 13
+
+    O(n * 2^n)
 */
 
 // Solution Description

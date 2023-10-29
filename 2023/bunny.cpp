@@ -19,6 +19,8 @@
     that are adjacent in the original graph.  To get the number of nodes that
     are on every path between a and b, find the distance between a and b in the 
     metagraph.
+
+    O(m + (n+q) log n)
 */
 
 #include <bits/stdc++.h>

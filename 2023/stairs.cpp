@@ -24,6 +24,8 @@
     how many ways are their to validly place the blocks.  The transitions are either
     add another row to the remaining columns or reduce the number of columns that
     are being processed.
+
+    O(t) where the precomp is O(maxn sqrt(maxn)) and maxn is the maximum value of n
 */
 
 #include <bits/stdc++.h>

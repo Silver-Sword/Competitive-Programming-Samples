@@ -31,6 +31,8 @@
                      to that subsequence/set.
 
     Use a dp where the state space is the current index and the previously taken index.
+    
+    O(n^2)
 */
 
 #include <bits/stdc++.h>

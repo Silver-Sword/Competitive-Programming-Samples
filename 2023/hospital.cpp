@@ -35,6 +35,8 @@
 
     Find the shared dominators using a dominator tree and the lower common ancestor
     algorithm.
+
+    O(nk log n)
 */
 
 #include <bits/stdc++.h>

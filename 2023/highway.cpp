@@ -27,6 +27,8 @@
     the value by dividing from the target (a reverse calculation) using modular inverse.
     If the resulting value exists within the set from the other half of the grid,
     then the two grids can be combined to form a valid grid of value n.
+
+    O(1) [this algorithm's time complexity doesn't depend on any variables]
 */
 
 #include <bits/stdc++.h>

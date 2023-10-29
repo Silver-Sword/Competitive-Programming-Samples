@@ -14,6 +14,8 @@
 
     0 <= n <= 20
     1 <= q <= 10^6
+
+    O((nq + 2^n) log (2^n))
 */
 
 // Solution Description

@@ -19,7 +19,7 @@
     candies.  In that case, a possible answer answer is range between the two hashes.
     Otherwise, add the hash to the set.
 
-    O( (n+k) log n)
+    O((n+k) log n)
 */
 
 #include <bits/stdc++.h>

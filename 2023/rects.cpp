@@ -12,6 +12,8 @@
 
     1 <= q <= 10^5
     1 <= x, y <= 10^9
+
+    O(q * log^2(q))
 */
 
 // Solution Description
@@ -119,8 +121,8 @@ void solve()
     }
 
     // bit
-    FT2 pt (sz(key[0]) + 2);
-    FT2 rect (sz(key[0]) + 2);
+    FT2 pt (sz(p[0]) + 2);
+    FT2 rect (sz(p[0]) + 2);
 
     for(int i = 0; i < q; i++)
     {

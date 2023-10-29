@@ -22,6 +22,8 @@
     Then, order the rows such that the rows starting with x and x+m are not adjacent.
     This will force the difference to be k*m and k cannot be 1, so the difference must
     be composite.
+
+    O(nm)
 */
 
 #include <bits/stdc++.h>

@@ -24,6 +24,8 @@
     remove that node's edge set when leaving the node.
 
     Output the number of components at each leaf in the segment tree.
+
+    O((n+q+m) log q)
 */
 
 #include <bits/stdc++.h>

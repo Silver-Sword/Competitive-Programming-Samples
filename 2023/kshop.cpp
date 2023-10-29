@@ -8,7 +8,7 @@
     to choose k items such that the total price is p.
 
     1 <= n, k, q <= 10^5
-    0.01 <= p <= 500.0
+    0.01 <= p <= 500.00
 */
 
 // Solution Description
@@ -17,6 +17,8 @@
     Multiply the polynomials k times to get the total count for each price.
 
     Use fast exponentiation to reduce the number of multiplications to O(log k).
+
+    O(n + q + p^2 log k)
 */
 
 #include <bits/stdc++.h>

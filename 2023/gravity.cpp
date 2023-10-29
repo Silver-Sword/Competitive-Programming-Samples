@@ -30,6 +30,8 @@
 
     To create the areas for the minor power plants, use Minkowski sums, and then Point
     in Hull to check.
+
+    O((n+m) log n)
 */
 
 #include <bits/stdc++.h>

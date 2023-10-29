@@ -11,6 +11,9 @@
     the diagonals. (Visit the link to see an image of this game.)
 
     1 <= n <= 8
+    O(2^(n^2))
+    Keep in mind that this a backtracker, so the algorithm prunes a good deal
+    and the time is much more reasonable than the order analysis suggests.
 */
 
 // Solution Description

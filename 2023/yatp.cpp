@@ -19,6 +19,8 @@
     node in the subtree (including the root), assuming every path must go through 
     the root.  Do this recursively for each root and its subtree. Choose roots using
     centroid decomposition in order to get the log behavior.
+
+    O(n log^2 n)
 */
 
 #include <bits/stdc++.h>

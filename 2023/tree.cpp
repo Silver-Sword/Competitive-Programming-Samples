@@ -22,6 +22,8 @@
     Perform a single dfs to get the values associated with a default root.
 
     Then, perform a second dfs to get the values associated with all other roots.
+
+    O(n)
 */
 
 #include <bits/stdc++.h>

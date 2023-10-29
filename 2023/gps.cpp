@@ -30,6 +30,8 @@
 
 	For each range of y values between sweep events, extract all valid x ranges
 	from the segment tree, where all n squares intersect.
+
+	O((n+d) log n)
 */
 
 #pragma GCC optimize("O3,unroll-loops")

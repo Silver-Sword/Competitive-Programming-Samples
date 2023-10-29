@@ -13,6 +13,8 @@
 
     There are at most 502 specified points, at most 200 clouds, and the 
     maximum absolute value of any coordinate is 2000.
+
+    O(N^2) where N is the number of points
 */
 
 // Solution Description
@@ -23,6 +25,8 @@
     passing through any clouds.  Do this with a naive O(n^3) check for each 
     pair of points and each line.  Then run bfs on the graph to get the minimum 
     distance.
+
+    O
 */
 
 #include <bits/stdc++.h>
