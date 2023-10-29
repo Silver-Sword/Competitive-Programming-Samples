@@ -22,6 +22,7 @@
     on the remaining stacks.  Send the minimum element to the exit.
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -33,8 +34,8 @@ typedef vector<vi> vvi;
 #define all(x) begin(x), end(x)
 #define nl '\n'
 
+/* Solution Code */
 vi stack_id (1 << 20);
-
 vector<deque<int>> stacks;
 vi ans;
 
@@ -93,6 +94,7 @@ void solve()
     // cout << "num moves: " << sz(ans) << nl;
 }   
 
+// driver function
 int main(){
     cin.tie(0)->sync_with_stdio(0);
     cin.exceptions(cin.failbit);

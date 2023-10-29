@@ -31,6 +31,7 @@
     O(1) [this algorithm's time complexity doesn't depend on any variables]
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -41,6 +42,7 @@ typedef vector<ll> vl;
 #define sz(x) (int)(x).size()
 const ll MOD = 1e9 + 7, mod = MOD;
 
+/* Hackpack */
 ll euclid(ll a, ll b, ll &x, ll &y) {
 	if (!b) return x = 1, y = 0, a;
 	ll d = euclid(b, a % b, y, x);
@@ -59,6 +61,7 @@ ll divide(ll a, ll b)
     return (a * invert(b)) % MOD;
 }
 
+/* Solution Code */
 string ans = "";
 map<ll, vi> lot;
 vl fib;
@@ -164,6 +167,8 @@ bool solve()
     }
     return false;
 }
+
+// driver function
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);

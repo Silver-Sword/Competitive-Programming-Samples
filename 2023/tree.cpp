@@ -26,6 +26,7 @@
     O(n)
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -38,6 +39,7 @@ typedef vector<vl> vvl;
 #define nl '\n'
 #define sz(x) (int)(x).size()
 
+/* Solution Code */
 const int BLANK = -1, DIGIT = 21;
 
 vl numChildren, arr, ans;
@@ -165,6 +167,8 @@ void solve()
     for(int i = 0; i < n; i++) cout << ans[i] << " ";
     cout << nl;
 }
+
+// driver function
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);

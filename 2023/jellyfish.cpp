@@ -26,6 +26,7 @@
     Note that the precomp is about 5^8 operations, and is constant.
 */
 
+/* Template Code and Program Setup */
 #pragma GCC optimize("O2,O3,unroll-loops")
 #pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
 #include <bits/stdc++.h>
@@ -47,6 +48,7 @@ typedef vector<vl> vvl;
 #define all(x) begin(x), end(x)
 #define sz(x) (int)(x).size()
 
+/* Solution Code */
 const int INF = 1e9;
 const int CAP = 1552;
 int m;
@@ -154,6 +156,7 @@ void solve()
     cout << -1 << nl;
 }
 
+// driver function
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);

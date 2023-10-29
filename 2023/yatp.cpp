@@ -23,6 +23,7 @@
     O(n log^2 n)
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -37,6 +38,7 @@ typedef vector<ll> vl;
 #define nl '\n'
 #define all(x) begin(x), end(x)
 
+/* Hackpack */
 vector<vector<pii>> adj;
 vector<bool> is_removed;
 vector<int> subtree_size;
@@ -105,6 +107,7 @@ int get_centroid(int node, int tree_size, int parent = -1)
     return node;
 }
 /** Build up the centroid decomposition recursively */
+// Hackpack + Solution Modifications
 vl ans;
 void build_centroid_decomp(int node, vl &pen)
 {
@@ -144,6 +147,7 @@ void build_centroid_decomp(int node, vl &pen)
     }
 }
 
+/* Solution Code */
 vl pen;
 void solve()
 {
@@ -170,6 +174,8 @@ void solve()
     for(ll a : ans) total += a;
     cout << total << nl;
 }
+
+// driver function
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);

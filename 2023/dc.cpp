@@ -28,6 +28,7 @@
     O((n+q+m) log q)
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -37,6 +38,7 @@ typedef vector<pii> vii;
 #define sz(x)(int)(x).size()
 #define nl '\n'
 
+/* Hackpack */
 struct RollbackUF {
         vi e; vector<pii> st;
         RollbackUF(int n) : e(n, -1) {}
@@ -59,6 +61,7 @@ struct RollbackUF {
         }
 };
 
+/* Solution Code */
 struct Tree
 {
     int L, R, mid;
@@ -172,6 +175,8 @@ void solve()
     dfs(root, dfs);
     cout << nl;
 }
+
+// driver function
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);

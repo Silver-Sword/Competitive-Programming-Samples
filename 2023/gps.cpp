@@ -34,6 +34,7 @@
 	O((n+d) log n)
 */
 
+/* Template Code and Program Setup */
 #pragma GCC optimize("O3,unroll-loops")
 #pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
 #include <bits/stdc++.h>
@@ -50,6 +51,9 @@ typedef vector<vi> vvi;
 
 const int MAX = 1e5, OFFSET = MAX;
 
+/* 
+	Hackpack + modifications written by Cameron Custer
+*/
 inline int split(int tl, int tr) {
 	int pw2 = 1 << __lg(tr - tl);
 	return min(tl + pw2, tr - pw2 / 2);
@@ -104,6 +108,7 @@ struct seg_tree {
 	}
 };
 
+/* Solution Code */
 vvi getSquare(int x, int y, int d)
 {
 	vvi sq (4, vi (2));
@@ -201,6 +206,7 @@ void solve()
 		cout << p.first << " " << p.second << nl;
 }
 
+// driver function
 int main()
 {
 	cin.tie(0)->sync_with_stdio(0);

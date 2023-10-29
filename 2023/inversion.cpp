@@ -35,6 +35,7 @@
     O(n^2)
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -49,6 +50,7 @@ typedef vector<ll> vl;
 #define all(x) begin(x), end(x)
 #define sz(x) (int)(x).size()
 
+/* Solution Code */
 int n;
 
 vi buildPerm(vvi &adj)
@@ -128,7 +130,9 @@ void solve()
     cout << total << nl;
 }
 
-int main(){
+// driver function
+int main()
+{
     cin.tie()->sync_with_stdio(0);
     cin.exceptions(cin.failbit);
     solve();

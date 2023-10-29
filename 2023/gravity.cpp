@@ -34,6 +34,7 @@
     O((n+m) log n)
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -48,6 +49,7 @@ typedef vector<ll> vl;
 #define rep(i,a,b) for(int i = a; i < (b); i++)
 #define all(x) begin(x), end(x)
 
+/* Hackpack */
 template <class T> int sgn(T x) { return (x > 0) - (x < 0); }
 template<class T>
 struct Point {
@@ -105,8 +107,8 @@ bool inHull(const vector<P>& l, P p, bool strict = true) {
         return sgn(l[a].cross(l[b], p)) < r;
 }
 
+/* Solution Code */
 typedef Point<ll> Pl;
-
 Pl addVectors(vector<Pl> &poly, ll &f, vector<Pl> &vects)
 {
     Pl lo = poly[0] * f;
@@ -234,6 +236,7 @@ void solve()
     cout << nl;
 }
 
+// driver function
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);

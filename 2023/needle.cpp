@@ -13,8 +13,6 @@
 
     There are at most 502 specified points, at most 200 clouds, and the 
     maximum absolute value of any coordinate is 2000.
-
-    O(N^2) where N is the number of points
 */
 
 // Solution Description
@@ -26,9 +24,10 @@
     pair of points and each line.  Then run bfs on the graph to get the minimum 
     distance.
 
-    O
+    O(N^2) where N is the number of points
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -45,6 +44,7 @@ typedef vector<vii> vvii;
 #define sz(x) (int)(x).size()
 #define all(x) begin(x), end(x)
 
+/* Hackpack */
 template<class T> int sgn(T x) {return (x > 0) - (x < 0);}
 template<class T>
 struct Point
@@ -105,6 +105,7 @@ vector<P> convexHull(vector<P> pts)
     return {h.begin(), h.begin() + t - (t == 2 && h[0] == h[1])};
 }
 
+/* Solution Code */
 typedef pair<int, double> pid;
 typedef vector<pid> vid;
 void solve()
@@ -238,6 +239,8 @@ void solve()
 
     cout << fixed << setprecision(15) << dist[1] << nl;
 }
+
+// driver function
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);

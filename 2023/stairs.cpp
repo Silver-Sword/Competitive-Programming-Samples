@@ -28,6 +28,7 @@
     O(t) where the precomp is O(maxn sqrt(maxn)) and maxn is the maximum value of n
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -40,6 +41,7 @@ typedef vector<vl> vvl;
 #define sz(x) (int)(x).size()
 #define all(x) begin(x), end(x)
 
+/* Solution Code */
 const ll MOD = 998'244'353;
 const int MAXN = 2e5, SQRTN = 450, BLANK = -1;
 vl ans (MAXN+1);
@@ -77,7 +79,9 @@ void precomp()
     }
 }
 
-int main(){
+// driver function
+int main()
+{
     cin.tie(0)->sync_with_stdio(0);
     cin.exceptions(cin.failbit);
 

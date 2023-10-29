@@ -21,6 +21,7 @@
     O(n + q + p^2 log k)
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -35,6 +36,7 @@ typedef long long ll;
 const int MOD = 997;
 const int CAP = 500 * 100 + 1;
 
+/* Hackpack */
 typedef complex<double> C;
 typedef vector<double> vd;
 void fft(vector<C>& a) {
@@ -82,6 +84,7 @@ template<int M> vl convMod(const vl &a, const vl &b) {
 	return res;
 }
 
+/* Solution Code */
 vl mult(vl &arr, int exp)
 {
     if(exp == 1) return arr;
@@ -132,6 +135,7 @@ void solve()
     cout << nl;
 }
 
+// driver function
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);

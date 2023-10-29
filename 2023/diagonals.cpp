@@ -22,6 +22,7 @@
     use a rollback disjoint set.
 */
 
+/* Template Code and Program Setup */
 #pragma GCC optimize("O3,unroll-loops")
 #pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
 #include <bits/stdc++.h>
@@ -35,6 +36,7 @@ typedef vector<vi> vvi;
 #define sz(x) (int)(x).size()
 #define all(x) begin(x), end(x)
 
+/* Hackpack */
 struct RollbackUF {
     vi e; vector<pii> st;
     RollbackUF(int n) : e(n, -1) {}
@@ -57,6 +59,7 @@ struct RollbackUF {
     }
 };
 
+/* Solution Code */
 vector<string> ans;
 vector<string> grid;
 vector<vi> cand;
@@ -169,6 +172,7 @@ void solve()
     }
 }
 
+// driver function
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);

@@ -22,6 +22,7 @@
     O((n+k) log n)
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -32,6 +33,9 @@ using namespace std;
 typedef vector<int> vi;
 typedef long long ll;
 
+const int MAX = 1e6;
+
+/* Hackpack */
 typedef uint64_t ull;
 struct H
 {
@@ -77,7 +81,7 @@ vector<H> getHashes(string &str, int length)
 
 H hashString(string &s) {H h{}; for(char c : s) h = h*C+c; return h;}
 
-const int MAX = 1e6;
+/* Solution Code */
 vector<H> pw (MAX);
 void solve()
 {
@@ -118,6 +122,8 @@ void solve()
 
     cout << best*k << nl;
 }
+
+// driver function
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);

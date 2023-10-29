@@ -27,6 +27,7 @@
     Combine the single color ranges of the rows and columns with multiplication.
 */
 
+/* Template Code and Program Setup */
 #pragma GCC optimize("O3,unroll-loops")
 #pragma GCC target("avx2,bmi,bmi2,lzcnt,popcnt")
 
@@ -41,10 +42,13 @@ typedef long long ll;
 typedef vector<ll> vl;
 typedef vector<int> vi;
 
-int K;
-
+/* Solution Code */
 const int MAXN = 20;
+int K;
 int rowfull[MAXN], colfull[MAXN];
+
+const int MAX = (1 << 20) + 1;
+int rowstate[MAX], colstate[MAX];
 
 struct Tree
 {
@@ -81,8 +85,6 @@ struct Tree
     }
 };
 
-const int MAX = (1 << 20) + 1;
-int rowstate[MAX], colstate[MAX];
 void solve()
 {
     int n, q; cin >> n >> q;
@@ -124,6 +126,8 @@ void solve()
         cout << calc() << nl;
     }
 }
+
+// driver function
 int main()
 {
     for(int i = 0; i < MAX; i++) rowstate[i] = colstate[i] = 1;

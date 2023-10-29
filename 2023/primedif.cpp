@@ -26,6 +26,7 @@
     O(nm)
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -45,6 +46,7 @@ typedef long double ld;
 #define nl '\n'
 #define all(x) begin(x), end(x)
 
+/* Solution Code */
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);

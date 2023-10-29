@@ -25,6 +25,7 @@
     O(n log n)
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -34,6 +35,7 @@ using namespace std;
 
 const double EPS = 1e-8;
 
+/* Hackpack */
 template <class T> int sgn(T x) { return (x > 0) - (x < 0); }
 template<class T>
 struct Point {
@@ -87,6 +89,7 @@ vector<P> circleLine(P c, double r, P a, P b) {
         return {p - h, p + h};
 }
 
+/* Solution Code */
 int n, p, x, y, r;
 typedef Point<long double> P;
 P unit (0, 0);
@@ -176,6 +179,7 @@ void solve()
     cout << fixed << setprecision(4) << (total / (2 * PI)) << nl;
 }
 
+// driver function
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);

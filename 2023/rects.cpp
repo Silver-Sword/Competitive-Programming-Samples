@@ -23,6 +23,7 @@
     range queries/updates.
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -33,6 +34,7 @@ typedef long long ll;
 typedef vector<int> vi;
 typedef vector<vi> vvi;
 
+/* Hackpack */
 struct FT {
 	vector<ll> s;
 	FT(int n) : s(n) {}
@@ -79,6 +81,7 @@ struct FT2 {
 	}
 };
 
+/* Solution Code */
 void solve()
 {
     int q; cin >> q;
@@ -173,6 +176,8 @@ void solve()
         }
     }
 }
+
+// driver function
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);

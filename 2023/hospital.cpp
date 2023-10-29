@@ -39,6 +39,7 @@
     O(nk log n)
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -52,15 +53,7 @@ typedef vector<pii> vii;
 #define sz(x) (int)(x).size()
 #define rep(i,a,b) for(int i = a; i < (b); i++)
 
-void assertBad(int state)
-{
-    if(!state)
-    {
-        int a = 0, mod = 1e9 + 7;
-        while(true)
-            a = (a + 1) % mod;
-    }
-}
+/* Hackpack */
 template<class T>
 struct RMQ {
         vector<vector<T>> jmp;
@@ -72,7 +65,7 @@ struct RMQ {
                 }
         }
         T query(int a, int b) {
-                assertBad(a < b); // or return inf if a == b
+                assert(a < b); // or return inf if a == b
                 int dep = 31 - __builtin_clz(b - a);
                 return min(jmp[dep][a], jmp[dep][b - (1 << dep)]);
         }
@@ -99,7 +92,7 @@ struct LCA {
         }
 };
 
-int onPath[1001];
+int onPath[1001]; // modified line
 struct DominatorTree {
         vector<vi> adj,
                 ans; // input edges, edges of dominator tree (directed tree downwards from root)
@@ -124,7 +117,7 @@ struct DominatorTree {
                 return bes[x];
         }
         void dfs(int x) { // create DFS tree
-                onPath[x] = true; // added
+                onPath[x] = true; // modified line
                 label[x] = ++co;
                 rlabel[co] = x;
                 sdom[co] = par[co] = bes[co] = co;
@@ -156,6 +149,7 @@ struct DominatorTree {
         }
 };
 
+/* Solution Code */
 void solve()
 {
     int n, k; cin >> n >> k;
@@ -209,6 +203,7 @@ void solve()
     }
 }
 
+// driver function
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);

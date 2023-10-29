@@ -23,6 +23,7 @@
     O(m + (n+q) log n)
 */
 
+/* Template Code and Program Setup */
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -36,6 +37,7 @@ typedef vector<pii> vii;
 #define nl '\n'
 #define all(x) begin(x), end(x)
 
+/* Hackpack */
 template<class T>
 struct RMQ {
         vector<vector<T>> jmp;
@@ -108,8 +110,8 @@ void twoVCCs(F f) {
         num.assign(sz(ed), 0);
         rep(i,0,sz(ed)) if (!num[i]) dfs(i, -1, f);
 }
-const int DEBUG = false;
 
+/* Solution Code */
 void solve()
 {
     int n, m, u, v; cin >> n >> m;
@@ -202,6 +204,7 @@ void solve()
     }
 }
 
+// driver function
 int main()
 {
     cin.tie(0)->sync_with_stdio(0);
