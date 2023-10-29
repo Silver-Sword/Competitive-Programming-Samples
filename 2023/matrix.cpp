@@ -1,10 +1,19 @@
-// 
-//
-//
+// Matrix Queries
+// Southeastern European Regionals 2018
 
 // Problem Description
 /*
+    The price of a matrix is defined as:
+        1. 1, if the matrix is a single color OR
+        2. 1 plus the sum of the prices of its 4 submatrices (split the matrix 
+            into 4 equal-sized matrices)
+    The starting matrix is size 2^n by 2^n and is initially all white.
+    There are q queries. Each query specifies an index of a row or column to flip
+    the colors of all cells in this row/column.  Determine the price of the entire
+    matrix after each update.
 
+    0 <= n <= 20
+    1 <= q <= 10^6
 */
 
 // Solution Description

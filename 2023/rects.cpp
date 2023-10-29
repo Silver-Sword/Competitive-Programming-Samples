@@ -1,10 +1,17 @@
-// 
-//
-//
+// Points and Rectangles
+// Southeastern European Regionals 2018
 
 // Problem Description
 /*
+    There are q queries. There are 2 types of queries:
+    1. add a point (x, y)
+    2. add a rectangle (x1, y1), (x2, y2)
 
+    After each query, output the number of pairs of points and rectangles such that
+    the point lies on or within the rectangle.
+
+    1 <= q <= 10^5
+    1 <= x, y <= 10^9
 */
 
 // Solution Description

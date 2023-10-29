@@ -1,10 +1,17 @@
-// 
-//
-//
+// Tree XOR
+// Codeforces Round 899 (Div. 2)
+// https://codeforces.com/contest/1882/problem/D
 
 // Problem Description
 /*
+    There is a tree with n vertices, each with a value a_i.  For each possible root
+    of the tree, determine the minimum total cost required to make all vertex values
+    equivalent.  In each operation choose a value c and a vertex v, and for each
+    vertex in the subtree fo v (including itself) replace it with a_i xor c.
+    The cost of each operation is c * s, where s is the size of the subtree of v.
 
+    1 <= n <= 2*10^5
+    0 <= a_i < 2^20
 */
 
 // Solution Description

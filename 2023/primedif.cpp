@@ -1,10 +1,14 @@
-// 
-//
-//
+// No Prime Difference
+// Codeforces Round 877 (Div. 2)
+// https://codeforces.com/contest/1838/problem/C
 
 // Problem Description
 /*
+    Given n and m, use the integers 1 through n*m, and fill an n by m grid
+    such that no two adjacent cells have a difference in values that is prime.
+    Adjacent cells are those that share an edge.
 
+    4 <= n, m <= 1000
 */
 
 // Solution Description

@@ -1,10 +1,14 @@
-// 
-//
-//
+// K-Item Shopping Spree
+// UCF Locals 2017
 
 // Problem Description
 /*
+    There are n items each with a price.  Choose k items, with repetitions allowed.
+    Given q different price targets, p, determine the number of ways modulo 997
+    to choose k items such that the total price is p.
 
+    1 <= n, k, q <= 10^5
+    0.01 <= p <= 500.0
 */
 
 // Solution Description

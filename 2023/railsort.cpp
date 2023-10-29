@@ -1,10 +1,16 @@
-// 
-//
-//
+// Railroad Sort
+// ITMO Programming Contest Summer School 2014
 
 // Problem Description
 /*
-
+    There are n stacks, numbered 1 to n.  There is also a permutation of 1 to 2^n
+    waiting to enter the first stack.  A value can be moved from a stack (or the
+    start) to the next stack.  Only the top value of a stack (or the front of the starting
+    list) may be moved.  If the value is moved from the last stack, it reaches
+    the end.  Determine a way to move the 2^n values across the stacks in such a way
+    to end with an ordered permutation.
+    
+    1 <= n <= 13
 */
 
 // Solution Description

@@ -1,10 +1,19 @@
-// 
-//
-//
+// The Red Gem
+// Chicago Invitational 2012
 
 // Problem Description
 /*
+    Given:
+        a purple circle with radius p and center (0, 0)
+        a red circle inside the purple circle with radius r and center (x, y)
+        n orangle circles inside the purple circle, each with its own radius and center
+    
+    Determine the percentage of the perimeter of the purple which has an unobstructed
+    view of the red circle (no orange circles blocking any part of the red circle).
 
+    1 <= n <= 100
+    10 <= p <= 10^3
+    0 < r <= 1000
 */
 
 // Solution Description

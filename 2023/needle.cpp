@@ -1,10 +1,19 @@
-// 
-//
-//
+// Needle
+// CTU Open 2022-2023
 
 // Problem Description
 /*
+    The input includes a starting and ending point, as well as a number of 
+    clouds, each containing its own set of points.
 
+    Cloud boundaries are the convex hull of the set of cloud points.
+
+    Using only straight lines, determine the minimum distance between the 
+    starting and ending point.  Cloud boundaries may not be crossed, but may
+    be touched.
+
+    There are at most 502 specified points, at most 200 clouds, and the 
+    maximum absolute value of any coordinate is 2000.
 */
 
 // Solution Description

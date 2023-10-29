@@ -24,11 +24,11 @@ This folder contains a snapshot of all the most recent programs.
 | Needle | needle.cpp | convex hull, bfs | CTU 2022 |
 | No Prime Differences | primedif.cpp | constructive, greedy, number theory | Codeforces Round 877 |
 | Railroad Sort | railsort.cpp | greedy, constructive | PCSS 2014 |
-| Points and Rectangles | rects.cpp | 2D BIT | ??? |
-| Red Gem | redgem.cpp | radial sweep, circle-circle tangents, circle-line intersection | ??? |
+| Points and Rectangles | rects.cpp | 2D BIT | SEERC 2018 |
+| Red Gem | redgem.cpp | radial sweep, circle-circle tangents, circle-line intersection | Chicago |
 | Counting Stairs | stairs.cpp | dp, space save | NEERC 2018 | 
 | Tree XOR | tree.cpp | tree reroot dp | Codeforces Round 899 |
-| Yet Another Tree Problem | yatp.cpp | convex hull trick, dp, centroid decomp | ??? |
+| Yet Another Tree Problem | yatp.cpp | convex hull trick, dp, centroid decomp | NAIPC |
 
 ## Acronym Key
 

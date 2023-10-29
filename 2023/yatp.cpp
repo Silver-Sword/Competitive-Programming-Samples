@@ -1,15 +1,21 @@
-// 
-//
-//
+// YATP
+// North American Invitational Programming Contest 2016
 
 // Problem Description
 /*
+    You are given a tree with n nodes, where each node has a penalty and each edge
+    has a weight.  The cost of a path is the sum of all the edge weights on the path
+    and the product of starting and ending node penalties.
 
+    For each node, find the minimum cost path with that node as the start.
+
+    1 <= n <= 2*10^5
+    Penalty and weights are between 1 and 10^6
 */
 
 // Solution Description
 /*
-
+    
 */
 
 #include <bits/stdc++.h>

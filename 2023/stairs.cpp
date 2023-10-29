@@ -1,10 +1,14 @@
-// 
-//
-//
+// Counting Stairs
+// Northern Subregional 2018
 
 // Problem Description
 /*
+    Determine the number of symmetric staircases that can be built with n blocks
+    modulo a constant prime. A staircase is symmetric if it is the same across
+    the x=y line.  A step must be equal or less than the previous step.
 
+    There are up to 10^4 testcases.
+    1 <= n <= 2*10^5
 */
 
 // Solution Description
