@@ -22,7 +22,19 @@
 
 // Solution Description
 /*
+    To determine which special nurses cannot go on vacation,
+    run a dfs from all staff nurses and mark all visited nodes.
+    Any special nurse that is not marked during this pass must not have a 
+    valid substitution.
 
+    To determine if two nurses cannot go on vacation at the same time find the 
+    dominators of both nurses.  In other words, find the nurses that must be used
+    for any/every possible substitution chain for a nurse.  If two nurses share a 
+    dominating nurse, then they *cannot* go on vacation at the same time, because 
+    otherwise, they would both require a nurse be moved to a different job.
+
+    Find the shared dominators using a dominator tree and the lower common ancestor
+    algorithm.
 */
 
 #include <bits/stdc++.h>
@@ -83,7 +95,6 @@ struct LCA {
                 tie(a, b) = minmax(time[a], time[b]);
                 return path[rmq.query(a, b)];
         }
-        //dist(a,b){return depth[a] + depth[b] - 2*depth[lca(a,b)];}
 };
 
 int onPath[1001];
@@ -111,7 +122,7 @@ struct DominatorTree {
                 return bes[x];
         }
         void dfs(int x) { // create DFS tree
-        onPath[x] = true;
+                onPath[x] = true; // added
                 label[x] = ++co;
                 rlabel[co] = x;
                 sdom[co] = par[co] = bes[co] = co;

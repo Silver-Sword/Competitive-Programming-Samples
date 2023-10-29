@@ -22,7 +22,7 @@
 
 // Solution Description
 /*
-
+    
 */
 
 #include <bits/stdc++.h>

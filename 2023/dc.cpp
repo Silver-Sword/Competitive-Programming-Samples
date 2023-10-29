@@ -16,7 +16,14 @@
 
 // Solution Description
 /*
+    Use a segment tree to store range of times that an edge is active.  Times represent
+    the index of a query. 
+    
+    Then, dfs through the segment tree. At each node in the tree,
+    add that node's edge set to the disjoint set when entering the node and rollback/
+    remove that node's edge set when leaving the node.
 
+    Output the number of components at each leaf in the segment tree.
 */
 
 #include <bits/stdc++.h>

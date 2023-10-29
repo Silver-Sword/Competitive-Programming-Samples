@@ -15,7 +15,8 @@
 
 // Solution Description
 /*
-
+    Perform a backtracking/recursive algorithm. To check for diagonal cycles,
+    use a rollback disjoint set.
 */
 
 #pragma GCC optimize("O3,unroll-loops")

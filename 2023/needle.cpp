@@ -8,9 +8,8 @@
 
     Cloud boundaries are the convex hull of the set of cloud points.
 
-    Using only straight lines, determine the minimum distance between the 
-    starting and ending point.  Cloud boundaries may not be crossed, but may
-    be touched.
+    Determine the minimum distance between the  starting and ending point.  
+    Cloud boundaries may not be crossed, but may be touched.
 
     There are at most 502 specified points, at most 200 clouds, and the 
     maximum absolute value of any coordinate is 2000.
@@ -18,7 +17,12 @@
 
 // Solution Description
 /*
-
+    Compute the convex hull of each cloud.  Each point of the convex hulls, as well
+    as the starting and ending point will be a node in the graph.  Build the graph 
+    where each edge represents that the two nodes/points can reach each other without
+    passing through any clouds.  Do this with a naive O(n^3) check for each 
+    pair of points and each line.  Then run bfs on the graph to get the minimum 
+    distance.
 */
 
 #include <bits/stdc++.h>

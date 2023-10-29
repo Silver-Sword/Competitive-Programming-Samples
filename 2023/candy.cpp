@@ -12,7 +12,14 @@
 
 // Solution Description
 /*
+    Process the candies in order.  For each candy, compute a prefix hash
+    of the excess candies and the total number of candies that can be equally distributed.  
+    If the prefix hash already exists in the hash set, then there must exist a 
+    smaller prefix which can be subtracted out to get a perfectly distributable set of
+    candies.  In that case, a possible answer answer is range between the two hashes.
+    Otherwise, add the hash to the set.
 
+    O( (n+k) log n)
 */
 
 #include <bits/stdc++.h>

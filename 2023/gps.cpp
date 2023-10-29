@@ -17,7 +17,19 @@
 
 // Solution Description
 /*
+	Observation: Manhattan distance makes a perfect diamond around a center point.
 
+	Using the rotation trick, convert the diamonds of a Manhattan distance to
+	axis-aligned squares.
+
+	Sweep through the squares, ordered by their y-values.  Treat each top of the square
+	as an add range, and each square bottom as a subtract range.  Additionally, because
+	the Manhattan distances are exact, include a second square in the sweep that "cuts out"
+	the inside of the full square.  In other words, subtract out a reduced range after the top
+	and add that reduced range before the bottom.
+
+	For each range of y values between sweep events, extract all valid x ranges
+	from the segment tree, where all n squares intersect.
 */
 
 #pragma GCC optimize("O3,unroll-loops")
