@@ -17,7 +17,9 @@
 
 // Solution Description
 /*
-
+    The solution includes running a bfs on all reachable values. However,
+    using sets for each bfs is too slow for this particular problem. In order 
+    to bypass this limitation, the valid move set must be precomputed.
 */
 
 #pragma GCC optimize("O2,O3,unroll-loops")

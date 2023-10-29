@@ -13,7 +13,15 @@
 
 // Solution Description
 /*
-
+    Observation: +/- 1 is a valid difference, so a row of incremeted numbers is valid
+                 for example: 1,2,3 is valid, as is 4,5,6,7
+    Observation: placing two of these rows adjacent to each other will give a difference
+                 of m*k for every column.
+    
+    Set each column to a sequence of the form x to x+m-1
+    Then, order the rows such that the rows starting with x and x+m are not adjacent.
+    This will force the difference to be k*m and k cannot be 1, so the difference must
+    be composite.
 */
 
 #include <bits/stdc++.h>
@@ -57,7 +65,8 @@ int main()
         {
             if(idx >= n) idx = 0;
 
-            rep(j,0,m) cout << arr[idx][j] << " ";
+            for(int j = 0; j < m; j++) 
+                cout << arr[idx][j] << " ";
             cout << nl;
         } 
     }

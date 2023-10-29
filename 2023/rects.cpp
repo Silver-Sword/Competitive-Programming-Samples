@@ -16,7 +16,9 @@
 
 // Solution Description
 /*
-
+    Use 2 2D implicit binary index trees to keep track of the existing points and 
+    rectangles.  Points represent index queries/updates and rectangles are
+    range queries/updates.
 */
 
 #include <bits/stdc++.h>

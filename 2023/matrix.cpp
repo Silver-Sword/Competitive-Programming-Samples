@@ -18,7 +18,11 @@
 
 // Solution Description
 /*
+    Keep track of rows and columns independently and store for all ranges of lengths
+    that are powers of two how many single color ranges there are.
 
+    Calculate the score after each query by subtracting out all single color squares.
+    Combine the single color ranges of the rows and columns with multiplication.
 */
 
 #pragma GCC optimize("O3,unroll-loops")

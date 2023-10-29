@@ -13,7 +13,10 @@
 
 // Solution Description
 /*
+    Use FFT under mod. Each polynomial represents sum(count * x ^ (price*100)).
+    Multiply the polynomials k times to get the total count for each price.
 
+    Use fast exponentiation to reduce the number of multiplications to O(log k).
 */
 
 #include <bits/stdc++.h>

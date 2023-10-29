@@ -14,7 +14,11 @@
 
 // Solution Description
 /*
-
+    Find all the VCCs.  Create a metagraph where each node is either a VCC
+    or a vertex that is in multiple VCCs. Edges should be added between nodes/groups
+    that are adjacent in the original graph.  To get the number of nodes that
+    are on every path between a and b, find the distance between a and b in the 
+    metagraph.
 */
 
 #include <bits/stdc++.h>

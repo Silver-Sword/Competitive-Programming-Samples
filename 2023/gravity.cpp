@@ -22,7 +22,14 @@
 
 // Solution Description
 /*
-    
+    Representing the three points as vectors: u + v = 2w.
+    Depending on which vector is the minor plant leads to three different possible areas to check:
+    2P1 - P2 = m
+    2P2 - P1 = m
+    P1 + P2 = 2m
+
+    To create the areas for the minor power plants, use Minkowski sums, and then Point
+    in Hull to check.
 */
 
 #include <bits/stdc++.h>

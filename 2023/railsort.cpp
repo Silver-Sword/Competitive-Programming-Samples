@@ -15,7 +15,9 @@
 
 // Solution Description
 /*
-
+    The main idea of this solution is to use the stack farthest from the exit to hold
+    the biggest half of the elements.  For the remaining elements, use this approach
+    on the remaining stacks.  Send the minimum element to the exit.
 */
 
 #include <bits/stdc++.h>

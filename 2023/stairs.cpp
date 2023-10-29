@@ -13,7 +13,17 @@
 
 // Solution Description
 /*
+    Example Staircase:
+    #
+    ##
+    ###
 
+    For each n, brute force the size of the center square of the stair.
+    Then, do a dp for the number of ways to place the remaining blocks.
+    The dp will represent for each (number of columns, number of remaining blocks),
+    how many ways are their to validly place the blocks.  The transitions are either
+    add another row to the remaining columns or reduce the number of columns that
+    are being processed.
 */
 
 #include <bits/stdc++.h>

@@ -7,7 +7,7 @@
     such that each edge (u, v) in the graph represents an inversion between the 
     value at index u and the value at index v in the permutation.
 
-    A set of vertices is independent if no two verticies in the set have an edge
+    A set of vertices is independent if no two vertices in the set have an edge
     between them.
 
     A set of vertices is dominant if every vertice that does not belong to the set
@@ -20,7 +20,17 @@
 
 // Solution Description
 /*  
+    Observation 1: The permutation can be extracted from the graph by sorting each index
+                   by the number of values it is less/greater than
+    Observation 2: An indepdent set is an ordered subsequence in the permutation
+    Observation 3: A dominant set is one where each index not in the set is out of 
+                   order relative to the set
 
+    Reduced Problem: Count the number of ordered subsequences in the permutation, such
+                     that no additional values in the permutation can be validly added
+                     to that subsequence/set.
+
+    Use a dp where the state space is the current index and the previously taken index.
 */
 
 #include <bits/stdc++.h>

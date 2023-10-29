@@ -18,7 +18,9 @@
 
 // Solution Description
 /*
-
+    Use circle-circle tangents between the red and orange circles to find all 
+    the angles along the purple circumference that are blocked.  Then, perform a
+    radial sweep to process all angle ranges.
 */
 
 #include <bits/stdc++.h>

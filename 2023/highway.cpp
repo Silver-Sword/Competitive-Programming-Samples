@@ -14,7 +14,19 @@
 
 // Solution Description
 /*
+    Observation: The number of ways to place cars inside a 2 by something grid
+                 is equivalent to the Fibonacci sequence.
 
+    Divide the grid into two sections.
+    For the first half of the graph, randomly generate 10^6 grids of size up to 100
+    using the Fibonacci sequence observation.  The top and bottom of the grid
+    should be symmetric and be of the form: x blank spots followed by a separator
+    followed by y blank spots, etc. Store all values that resulted.
+
+    Then, do the same for the second half of the graph, except this time, calculate
+    the value by dividing from the target (a reverse calculation) using modular inverse.
+    If the resulting value exists within the set from the other half of the grid,
+    then the two grids can be combined to form a valid grid of value n.
 */
 
 #include <bits/stdc++.h>
