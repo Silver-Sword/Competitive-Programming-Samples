@@ -30,21 +30,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-typedef vector<int> vi;
-typedef vector<vi> vvi;
-typedef pair<int, int> pii;
-typedef vector<pii> vii;
-typedef long long ll;
-typedef vector<ll> vl;
-typedef vector<vl> vvl;
-typedef pair<ll, ll> pll;
-typedef vector<double> vd;
-typedef long double ld;
-
-#define rep(i,a,b) for(int i = a; i < (b); i++)
-#define sz(x) (int)(x).size()
 #define nl '\n'
 #define all(x) begin(x), end(x)
+typedef vector<int> vi;
+typedef vector<vi> vvi;
 
 /* Solution Code */
 int main()
@@ -53,9 +42,9 @@ int main()
     cin.exceptions(cin.failbit);
 
     int tt; cin >> tt;
-    
     while(tt--)
     {
+        // input
         int n, m;
         cin >> n >> m;
         vvi arr (n, vi (m));
@@ -64,10 +53,12 @@ int main()
             iota(all(arr[i]), i*m+1);
         }
 
+        // print out every other row
         int d = 2;
         for(int idx = 1, count = 0; count < n; count++, idx += d)
         {
-            if(idx >= n) idx = 0;
+            if(idx >= n) 
+                idx = 0;
 
             for(int j = 0; j < m; j++) 
                 cout << arr[idx][j] << " ";

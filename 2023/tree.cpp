@@ -47,6 +47,7 @@ vvl onCost, offCost;
 vvi adj;
 int n;
 
+// default costs for a single root
 void first_dfs(int node, int par)
 {
     numChildren[node] = 0;
@@ -57,6 +58,7 @@ void first_dfs(int node, int par)
         first_dfs(next, node);
         numChildren[node] += numChildren[next] + 1;
 
+        // independently calculate the cost for each digit of the binary value
         for(int i = 0, d = 1; i <= DIGIT; i++, d <<= 1)
         {
             if(arr[node] & d) // my digit is on
@@ -85,9 +87,10 @@ void first_dfs(int node, int par)
     }
 }
 
+// recalculate for new roots
 void second_dfs(int node, int par, vl &par_on_cost, vl &par_off_cost)
 {
-
+    // recalculate the cost for this node as the root for each binary digit (bit)
     vl on_cost (DIGIT+1), off_cost(DIGIT+1);
     for(int i = 0, d = 1; i <= DIGIT; i++, d <<= 1)
     {
@@ -113,14 +116,16 @@ void second_dfs(int node, int par, vl &par_on_cost, vl &par_off_cost)
         if(arr[node] & d) my_cost += on_cost[i];
         else my_cost += off_cost[i];
     }
+    // the answer for this node as the root
     ans[node] = my_cost;
 
     for(int next : adj[node])
     {
         if(next == par) continue;
+
+        // recompute the cost for everything that isn't in the subtree of next
         vl next_on_cost (on_cost);
         vl next_off_cost (off_cost);
-
         for(int i = 0, d = 1; i <= DIGIT; i++, d <<= 1)
         {
             if(arr[node] & d) // my digit is on
@@ -140,6 +145,7 @@ void second_dfs(int node, int par, vl &par_on_cost, vl &par_off_cost)
 
 void solve()
 {
+    // input
     cin >> n;
     numChildren = vl (n);
     arr = vl (n);
@@ -147,7 +153,6 @@ void solve()
     adj = vvi (n);
     onCost = vvl (n, vl(DIGIT+1));
     offCost = vvl (n, vl(DIGIT+1));
-
     int u, v;
 
     for(int i = 0; i < n; i++) cin >> arr[i];
@@ -159,11 +164,14 @@ void solve()
         adj[v].push_back(u);
     }
 
+    // compute the default/initial values
     first_dfs(0, 0);
 
+    // compute the values for all the other nodes as roots
     vl unit (DIGIT+1, 0);
     second_dfs(0, 0, unit, unit);
     
+    // output
     for(int i = 0; i < n; i++) cout << ans[i] << " ";
     cout << nl;
 }

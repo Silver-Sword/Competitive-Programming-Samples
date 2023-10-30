@@ -85,17 +85,23 @@ H hashString(string &s) {H h{}; for(char c : s) h = h*C+c; return h;}
 vector<H> pw (MAX);
 void solve()
 {
+    // input
     int n, k; cin >> n >> k;
+
+    // variables for prefix processing
     map<H, int> hash;
+    vi atTarget (n+1, k);
+    vi freq(k);
+
+    // precomp the hash of one of each candy
     H full (0);
     for(int i = 0; i < k; i++) full = full + pw[i];
 
-    vi atTarget (n+1, k);
-    vi freq(k);
+    // empty prefix hash
     H h (0);
-
     hash[h] = 0;
 
+    // process the prefixes
     int cur = 0, v, best = 0;
     for(int i = 0; i < n; i++)
     {
@@ -105,21 +111,21 @@ void solve()
 
         // update hash here
         h = h + pw[v];
+        // update the check of the excess candies
         while(!atTarget[cur]) 
         {
             h = h - full;
             cur++;
         }
 
+        // hash already exists as a prefix, extract answer
         if(hash.find(h) != hash.end())
-        {
             best = max(best, cur - hash[h]);
-        }
-
-        // add hash to set
-        if(hash.find(h) == hash.end()) hash[h] = cur;
+        // add prefix hash to set
+        else hash[h] = cur;
     }
 
+    // output the answer
     cout << best*k << nl;
 }
 

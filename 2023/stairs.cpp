@@ -47,21 +47,26 @@ const int MAXN = 2e5, SQRTN = 450, BLANK = -1;
 vl ans (MAXN+1);
 vvl dpWays(SQRTN+1, vl ((MAXN >> 1)+1, BLANK));
 
+// take it or leave it dp on (number of columns left to process, number of blocks left)
 ll solve(int col_left, int block_left)
 {
-    if(block_left == 0 || col_left == 1) return 1;
-    else if(!col_left) return 0;
+    // base cases
+    if(block_left == 0 || col_left == 1) return 1;  // no more blocks or columns to process
+    else if(!col_left) return 0;                    // no columns (redundant check)
     else if(dpWays[col_left][block_left] != BLANK) return dpWays[col_left][block_left];
 
+    // either stop adding blocks to the last column
     ll ans = solve(col_left - 1, block_left);
-    if(col_left <= block_left) ans = (ans + solve(col_left, block_left - col_left)) % MOD;
+    // or add a row of blocks to every column
+    if(col_left <= block_left) 
+        ans = (ans + solve(col_left, block_left - col_left)) % MOD;
 
     return dpWays[col_left][block_left] = ans;
 }
  
 void precomp()
 {
-    // precomp
+    // precomp all possible values of (columns left, blocks left)
     for(int col = SQRTN; col >= 0; col--)
     {
         for(int left = MAXN >> 1; left >= 0; left--)
@@ -69,11 +74,14 @@ void precomp()
             solve(col, left);
         }
     }
-
+    
+    // for all possible number of blocks
     for(int blocks = 1; blocks <= MAXN; blocks++)
     {
+        // brute force the base square used
         for(int base = ((blocks & 1) ? 1 : 2); base * base <= blocks; base += 2)
         {
+            // add the number of ways to use blocks given base
             ans[blocks] = (ans[blocks] + solve(base, (blocks - base * base) >> 1)) % MOD;
         }
     }
@@ -88,6 +96,7 @@ int main()
     precomp();
     int tt; cin >> tt;
     int n; 
+    // handle the actual queries
     while(tt--)
     {
         cin >> n;

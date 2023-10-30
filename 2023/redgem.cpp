@@ -106,6 +106,7 @@ void solve()
         orange.push_back({ro, P (xo, yo)});
     }
 
+    // get the point on the purple circle that corresponds to the line from s to e
     auto getCirclePoint = [&] (P e, P s) // note the backwards s and e
     {
         return circleLine(unit, p, s, e)[0];
@@ -118,7 +119,8 @@ void solve()
         vector<pair<P, P>> tang;
         double rd = r+orange[i].first;
 
-        if(((red-orange[i].second).dist2() - rd*rd) <= EPS) // check tangent case
+        // case out when the red and orange circle touch
+        if(((red-orange[i].second).dist2() - rd*rd) <= EPS)
         {
             pair<P, P> tmp = tangents(red, r, orange[i].second, -orange[i].first)[0];
             P a = tmp.first, b;
@@ -131,9 +133,10 @@ void solve()
             else
                 b = P(a.x + 1, a.y + -(slope.x / slope.y));
 
-            // touching, line is perp to 2 centers
+            // touching, line is perpendicular to the 2 centers
             tang = {{a, b}, {b, a}};
         }
+        // check tangent case
         else
             tang = tangents(red, -r, orange[i].second, orange[i].first);
 
@@ -141,22 +144,23 @@ void solve()
         P b = getCirclePoint(tang[1].first, tang[1].second);
 
         double aTheta = a.angle(), bTheta = b.angle();
-
+        
+        // adjust the angles to make valid ranges
         if(aTheta > bTheta) bTheta += 2 * PI;
         else if(aTheta < 0 && bTheta < 0)
         {
             aTheta += 2 * PI;
             bTheta += 2 * PI;
         }
-        // if(bTheta < 0) bTheta += 2 * PI;
 
+        // add the angle range
         q.push_back({aTheta, -1});
         q.push_back({bTheta , 1});
     }
 
-    // sort(all(q), compare);
     sort(all(q));
 
+    // process all the angle ranges in order
     long double e = q[0].first + 2 * PI;
     long double total = 0;
     long double cur = q[0].first;

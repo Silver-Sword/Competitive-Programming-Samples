@@ -53,6 +53,7 @@ typedef vector<ll> vl;
 /* Solution Code */
 int n;
 
+// returns the permutation given the graph that represents it
 vi buildPerm(vvi &adj)
 {
     vi perm (n);
@@ -73,6 +74,7 @@ vi buildPerm(vvi &adj)
 
 vl dp;
 const int BLANK = -1;
+// run the dp starting at index idx (which has been chosen)
 ll recurse(int idx, vi &perm)
 {
     if(dp[idx] != BLANK) return dp[idx];
@@ -81,18 +83,24 @@ ll recurse(int idx, vi &perm)
     ll ans = 0;
     for(int i = idx + 1; i < n; i++)
     {
+        // make sure the next chosen value is larger than the value at idx
+        // and smaller than all values between idx and i-1
         if(perm[i] < perm[idx] || perm[i] > ran_min) continue;
 
         ran_min = perm[i];
+        // update the count
         ans += recurse(i, perm);
     }
 
+    // if idx is the last value in the sequence, return 1 by default
     if(ran_min >= (int) 1e9) return dp[idx] = 1;
+    // return the count
     return dp[idx] = ans;
 }
 
 void solve()
 {
+    // input
     int m; cin >> n >> m;
     vvi matrix (n, vi (n));
     int u, v;
@@ -113,20 +121,23 @@ void solve()
         }
     }
 
+    // get the permutation
     vi perm = buildPerm(adj); 
 
-    // must take local min
     int prev_min = 1e9;
     ll total = 0;
     dp = vl (n, BLANK);
     for(int i = 0; i < n; i++)
     {
+        // must take a prefix min as the starting value
         if(perm[i] < prev_min)
         {
             prev_min = perm[i];
+            // update the count with this starting index
             total += recurse(i, perm);
         }
     }
+    // output the total
     cout << total << nl;
 }
 

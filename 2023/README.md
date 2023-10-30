@@ -2,9 +2,6 @@
 
 This folder contains a snapshot of all the most recent programs.
 
-**Please Note: this year's samples are in the process of being added/edited for viewing
-
-
 # Problem Tags
 
 | Problem Title | File Name | Problem Tags | Source |

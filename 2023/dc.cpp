@@ -62,10 +62,11 @@ struct RollbackUF {
 };
 
 /* Solution Code */
+// segment tree with range updates
 struct Tree
 {
     int L, R, mid;
-    vi on;
+    vi on; // stores the edges that should be turned on at this node
     Tree *left, *right;
     Tree(int l, int r)
     {
@@ -100,6 +101,7 @@ void solve()
     vii ed;
     vi timeOn;
 
+    // turn on an edge at the given time
     auto turnOn = [&] (int u, int v, int time)
     {
         if(idx.find({u, v}) == idx.end())
@@ -112,6 +114,7 @@ void solve()
         timeOn[id] = time;
     };
 
+    // turn off the given edge at the given time
     auto turnOff = [&] (int u, int v, int time)
     {
         int id = idx[{u, v}];
@@ -121,6 +124,7 @@ void solve()
         timeOn[id] = -1;
     };
 
+    // process the input
     int u, v, op;
     for(int i = 0; i < m; i++)
     {
@@ -146,28 +150,33 @@ void solve()
         }
     }
 
+    // turn off all edges at the end
     for(int i = 0; i < sz(timeOn); i++)
         if(timeOn[i] != -1)
             turnOff(ed[i].first, ed[i].second, k);
 
+    // dfs through the tree and mark the number of components at the leaves
     auto dfs = [&] (Tree *cur, auto &&dfs) -> void
     {
         int cur_time = dsu.time();
-        // turn everything on
+        // activate the relevant edges
         for(int e : cur->on)
             dsu.join(ed[e].first, ed[e].second);
-
+        
+        // leaf node, which represents query #L
         if(cur->L == cur->R)
         {
             if(cur->L != 0) cout << " ";
             cout << (n - dsu.time() / 2);
         }
+        // dfs to children nodes
         else
         {
             dfs(cur->left, dfs);
             dfs(cur->right, dfs);
         }
 
+        // turn off the edges that were activated in this node
         dsu.rollback(cur_time);
     };
 

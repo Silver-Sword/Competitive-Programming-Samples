@@ -114,6 +114,7 @@ void twoVCCs(F f) {
 /* Solution Code */
 void solve()
 {
+    // input
     int n, m, u, v; cin >> n >> m;
     ed.resize(n);
     vii edges;
@@ -126,39 +127,40 @@ void solve()
         edges.push_back({u, v});
     }
 
-    // find articulation points between
     vvi metagraph;
     vi id (n);
     int vid = 0;
-    vi ecc_id (m);
-    vvi eccs (n);
+    vi vcc_id (m);
+    vvi vccs (n);
 
+    // build the meta graph of vccs and articulation points
     auto buildmetagraph = [&] ()
     {
         vi used (m);
         int counter = 0;
         twoVCCs([&](const vi &edgelist){
-            // do some counting
+            // set all vcc ids
             for(int eid : edgelist)
             {
-                eccs[edges[eid].first].push_back(counter);
-                eccs[edges[eid].second].push_back(counter);
+                vccs[edges[eid].first].push_back(counter);
+                vccs[edges[eid].second].push_back(counter);
                 used[eid] = true;
-                ecc_id[eid] = counter;
+                vcc_id[eid] = counter;
             }
             counter++;
         });
 
         for(int i = 0; i < n; i++)
         {
-            eccs[i].erase(unique(all(eccs[i])), eccs[i].end());
+            vccs[i].erase(unique(all(vccs[i])), vccs[i].end());
         }
 
+        // figure out which nodes are articulation points
         for(int i = 0; i < n; i++)
         {
-            if(sz(eccs[i]) == 1) // in 1 vcc
+            if(sz(vccs[i]) == 1) // in 1 vcc
             {
-                id[i] = eccs[i].front();
+                id[i] = vccs[i].front();
             }
             else
             {
@@ -166,6 +168,7 @@ void solve()
             }
         }
 
+        // add articulation points
         metagraph = vvi (counter);
         auto addEdge = [&] (int u, int v)
         {
@@ -175,10 +178,10 @@ void solve()
         for(int i = 0; i < m; i++)
         {
             pii e = edges[i];
-            if(id[e.first] != ecc_id[i])
-                addEdge(id[e.first], ecc_id[i]);
-            if(id[e.second] != ecc_id[i])
-                addEdge(id[e.second], ecc_id[i]);
+            if(id[e.first] != vcc_id[i])
+                addEdge(id[e.first], vcc_id[i]);
+            if(id[e.second] != vcc_id[i])
+                addEdge(id[e.second], vcc_id[i]);
         }
 
         for(int i = 0; i < sz(metagraph); i++)
@@ -191,12 +194,14 @@ void solve()
     buildmetagraph();
     LCA lca (metagraph);
 
+    // process the queries
     int q; cin >> q;
     while(q--)
     {
         int s, t; cin >> s >> t; s--, t--;
+        // compute the distance between the s and t nodes on the lca graph
         int dist = lca.dist(id[s], id[t]);
-        if(!(dist & 1) && sz(eccs[s]) > 1 && sz(eccs[t]) > 1)
+        if(!(dist & 1) && sz(vccs[s]) > 1 && sz(vccs[t]) > 1)
             dist--;
         dist >>= 1;
         dist += 2;

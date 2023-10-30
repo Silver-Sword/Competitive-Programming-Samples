@@ -113,8 +113,8 @@ void build_centroid_decomp(int node, vl &pen)
 {
     int centroid = get_centroid(node, get_subtree_size(node));
 
-    // do something
     LineContainer cht;
+    // get all paths from subtree nodes to the centroid
     auto dfs1 = [&] (int cur, int par, ll depth, auto&& dfs1) -> void
     {
         cht.add(pen[cur], depth);
@@ -127,6 +127,7 @@ void build_centroid_decomp(int node, vl &pen)
     };
     dfs1(centroid, centroid, 0LL, dfs1);
 
+    // get the best path from each subtree node that goes through the centroid
     auto dfs2 = [&] (int cur, int par, ll depth, auto &&dfs2) -> void
     {
         ans[cur] = min(ans[cur], cht.query(pen[cur]) + depth);
@@ -139,6 +140,7 @@ void build_centroid_decomp(int node, vl &pen)
     };
     dfs2 (centroid, centroid, 0LL, dfs2);
 
+    // perform this for every centroid
     is_removed[centroid] = true;
     for (pii next : adj[centroid]) {
         int child = next.first;
@@ -151,6 +153,7 @@ void build_centroid_decomp(int node, vl &pen)
 vl pen;
 void solve()
 {
+    // input
     int n; cin >> n;
     pen = vl (n);
     for(int i = 0; i < n; i++) cin >> pen[i];
@@ -165,11 +168,13 @@ void solve()
         adj[v].push_back({u, w});
     }
 
+    // perform the centroid decomp
     ans = vl (n, 1e18);
     subtree_size = vi (n);
     is_removed = vector<bool> (n);
     build_centroid_decomp(0, pen);
 
+    // output
     ll total = 0;
     for(ll a : ans) total += a;
     cout << total << nl;

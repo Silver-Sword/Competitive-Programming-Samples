@@ -67,6 +67,7 @@ map<ll, vi> lot;
 vl fib;
 int used[100];
 
+// build the output string from a list of empty lots
 void build(vi ls)
 {
     for(int i : ls)
@@ -76,6 +77,7 @@ void build(vi ls)
     }
 }
 
+// combine the left and right sections of the lot and output
 void buildAns(vi left, vi right)
 {
     ans = "";
@@ -85,6 +87,7 @@ void buildAns(vi left, vi right)
     cout << ans << nl << ans << nl;
 }
 
+// get a random number between lo and hi
 int getRand(int lo, int hi)
 {
     if(lo > hi) return lo;
@@ -95,6 +98,7 @@ bool solve()
 {
     ll target; cin >> target;
 
+    // handle min cases
     if(target == 0)
     {
         cout << ".##\n##.\n";
@@ -106,12 +110,14 @@ bool solve()
         return true;
     }
 
+    // left lot set
     for(int count = 1e6; count > 0; count--)
     {
         vi ls;
         ll pi = 1;
         int sum = -1;
 
+        // pick random lot sizes until the entire left size is at most 100
         while(sum < 100)
         {
             int pick = getRand(2, 100-sum);
@@ -121,22 +127,28 @@ bool solve()
             pi = (pi * fib[pick]) % MOD;
             ls.push_back(pick);
 
+            // if target is equal to the result, then return this lot
             if(pi == target)
             {
                 buildAns(ls, {});
                 return true;
             }
-            
+
+            // if this lot has a duplicate count that has already been found, don't do anything with it
             if(lot.find(pi) != lot.end()) continue;
+            // if this lot can combine with another already generated one, then the answer has been found
             if(lot.find(divide(target, pi)) != lot.end())
             {
                 buildAns(ls, lot[divide(target, pi)]);
                 return true;
             }
+            // add the lot to the set
             lot[pi] = vi (ls);
         }
     }
 
+    // pick random lot sizes for the right side
+    // this is the same process as above, except the resulting value is divided from target
     for(int count = 1e6; count > 0; count--)
     {
         vi ls;
@@ -173,7 +185,7 @@ int main()
 {
     cin.tie(0)->sync_with_stdio(0);
 
-    // precomp
+    // precomp the fib sequence
     fib = vl (101);
     fib[0] = 1;
     fib[1] = 1;

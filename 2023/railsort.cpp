@@ -39,6 +39,7 @@ vi stack_id (1 << 20);
 vector<deque<int>> stacks;
 vi ans;
 
+// move an element from one stack to another
 void move(int id, int from, int to)
 {
     while(from != to)
@@ -54,6 +55,7 @@ void move(int id, int from, int to)
     }
 }
 
+// order all the elements in stack n 
 void recurse(int offset, int n)
 {
     if(n == 0) return;
@@ -76,6 +78,7 @@ void recurse(int offset, int n)
 
 void solve()
 {
+    // input
     int n; cin >> n;
     stacks = vector<deque<int>> (n+2);
 
@@ -86,12 +89,13 @@ void solve()
         stacks[n+1].push_back(v);
     }
 
+    // run recursive solver
     recurse(1, n+1);
+
+    // output
     for(int a : ans)
         cout << a << " ";
     cout << nl;
-
-    // cout << "num moves: " << sz(ans) << nl;
 }   
 
 // driver function

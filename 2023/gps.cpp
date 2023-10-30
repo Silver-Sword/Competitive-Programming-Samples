@@ -109,6 +109,7 @@ struct seg_tree {
 };
 
 /* Solution Code */
+// get the diamond made from the center (x, y) and Manhattan distance d
 vvi getSquare(int x, int y, int d)
 {
 	vvi sq (4, vi (2));
@@ -132,7 +133,8 @@ void solve()
 	{
 		cin >> x >> y >> d;
 		vector<vi> sq = getSquare(x, y, d);
-
+		
+		// rotate the diamond to get an axis-aligned square
 		int x1 = sq[0][0] + sq[0][1];
 		int x2 = sq[3][0] + sq[3][1];
 		int y1 = sq[0][0] - sq[0][1];
@@ -141,9 +143,11 @@ void solve()
 		if(x1 > x2) swap(x1, x2);
 		if(y1 > y2) swap(y1, y2);
 
+		// add the square ranges to the sweep
 		q.push_back({{y1, 1}, {x1, x2}});
 		q.push_back({{y2+1, -1}, {x1, x2}});
-
+		
+		// remove the inner square to the sweep
 		if(y1 + 1 < y2 && x1 + 1 < x2)
 		{
 			q.push_back({{y1+1, -1}, {x1+1, x2-1}});
@@ -152,11 +156,11 @@ void solve()
 	}
 	sort(all(q));
 
-	// sweep
 	seg_tree tree (MAX+MAX+1);
-
 	vector<pii> ans;
 	ans.reserve(16'000);
+
+	// convert the rotated point (i, j) to the actual point
 	auto convert = [&] (int i, int j) -> pii
 	{
 		int x = (i+j)/2;
@@ -164,6 +168,7 @@ void solve()
 
 		return {x, y};
 	};
+	// extract the true points from the y1 to y2 range
 	auto extract = [&] (int y1, int y2)
 	{
 		vi x;
@@ -179,16 +184,16 @@ void solve()
 			}
 
 	};
+	// sweep through all the y ranges
 	int prev_y = -MAX-MAX;
 	for (int fr = 0; fr < sz(q); )
 	{
-		// update with y
 		int y = q[fr].first.first;
 		int delta_y = y - prev_y;
-		// ans += delta_y * computeFull();
 
 		extract(prev_y, y);
 
+		// process all ranges with the same y value at the same time
 		while(fr < sz(q) && q[fr].first.first == y)
 		{
 			int dif = q[fr].first.second;
@@ -201,6 +206,7 @@ void solve()
 
 		prev_y = y;
 	}
+	// output
 	sort(all(ans));
 	for(pii p : ans)
 		cout << p.first << " " << p.second << nl;

@@ -85,6 +85,7 @@ template<int M> vl convMod(const vl &a, const vl &b) {
 }
 
 /* Solution Code */
+// fast exponentiation
 vl mult(vl &arr, int exp)
 {
     if(exp == 1) return arr;
@@ -114,15 +115,18 @@ void solve()
         str = str.substr(0, sz(str) - 3) + str.substr(sz(str) - 2);
         int idx = stoi(str);
         if(idx >= sz(freq)) freq.resize(idx + 1);
+        // increment the frequency of items with price idx
         freq[idx]++;
     }
 
     int k, q; 
     cin >> k >> q;
 
+    // multiply freq k times
     freq = mult(freq, k);
     freq.resize(CAP);
 
+    // process queries
     int idx;
     while(q--)
     {
@@ -131,8 +135,6 @@ void solve()
         idx = stoi(str);
         cout << freq[idx] << nl;
     }
-
-    cout << nl;
 }
 
 // driver function

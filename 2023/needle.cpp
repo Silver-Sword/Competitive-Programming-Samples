@@ -139,9 +139,8 @@ void solve()
             key[cloud[i][j]] = sz(key);
         }
     
-    // make graph
+    // add edge between point a and point b
     vector<vid> adj (sz(key));
-
     auto addEdge = [&] (P &a, P &b)
     {
         int u = key[a], v = key[b];
@@ -150,6 +149,7 @@ void solve()
         adj[v].push_back({u, d});
     };
 
+    // returns true if point a can reach b without crossing over any cloud
     auto good = [&] (P &a, P &b) -> bool
     {
         for(int i = 0; i < n; i++)
@@ -216,6 +216,7 @@ void solve()
         }
     }
 
+    // run the bfs starting from the given starting point
     const int BLANK = -1;
     priority_queue<pair<double, int>, vector<pair<double, int>>, greater<pair<double, int>>> q;
     vector<double> dist (sz(key), BLANK);
@@ -237,6 +238,7 @@ void solve()
         }
     }
 
+    // output
     cout << fixed << setprecision(15) << dist[1] << nl;
 }
 

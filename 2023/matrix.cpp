@@ -52,11 +52,13 @@ int rowstate[MAX], colstate[MAX];
 
 struct Tree
 {
-    int L, R, mid;
-    Tree *left, *right;
-    int *ptr;
-    int on, depth;
-
+    int L, R, mid;        // range of this node
+    Tree *left, *right;   // child nodes
+    int *ptr;             // the rowfull or colfull array to update
+    int on;               // the number of cols/rows that are black in this range
+    int depth;            // the depth of this node in the tree
+    
+    // create tree
     Tree(int l, int r, int d, int *p) : L(l), R(r), depth(d), ptr(p), on (0), left (NULL), right (NULL)
     {
         mid = (L + R) / 2;
@@ -69,11 +71,14 @@ struct Tree
 
         ptr[d]++;
     }
+    // flip the col/row at idx, dif is either +1 or -1
     void update(int idx, int dif)
     {
         if(L > idx || R < idx) return;
 
+        // update the full value if necessary
         if(!on || on == R - L + 1) ptr[depth]--;
+        // update the number of black cols/rows
         on += dif;
         if(!on || on == R - L + 1) ptr[depth]++;
 
@@ -90,16 +95,20 @@ void solve()
     int n, q; cin >> n >> q;
     K = n;
     Tree row (1, (1 << n), 0, &rowfull[0]), col (1, (1 << n), 0, &colfull[0]);
+
+    // calculate the current cost of the grid
     auto calc = [&] ()
     {
         ll prev = 0, ans = 0, fact = 1;
 
+        // add the cost for every grid and subgrid
         for(int i = 0; i <= n; i++)
         {
             ans += fact;
             fact *= 4;
         }
 
+        // remove the cost for every monocolor grid
         for(int i = 0; i < n; i++)
         {
             prev = rowfull[i] * (ll) colfull[i] * 4LL;
@@ -108,6 +117,7 @@ void solve()
         return ans;
     };
 
+    // process the queries/updates
     int t, id;
     while(q--)
     {

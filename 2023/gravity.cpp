@@ -109,6 +109,7 @@ bool inHull(const vector<P>& l, P p, bool strict = true) {
 
 /* Solution Code */
 typedef Point<ll> Pl;
+// add the polygon vectors and returns the minimum point
 Pl addVectors(vector<Pl> &poly, ll &f, vector<Pl> &vects)
 {
     Pl lo = poly[0] * f;
@@ -127,6 +128,7 @@ Pl addVectors(vector<Pl> &poly, ll &f, vector<Pl> &vects)
     return lo;
 }
 
+// make a polygon from minkowski vectors and an offset point
 vector<Pl> makeHull(vector<Pl> &vects, Pl &start)
 {
     auto compare = [&] (Pl a, Pl b)
@@ -151,8 +153,8 @@ vector<Pl> makeHull(vector<Pl> &vects, Pl &start)
     }
     swap(vects, v);
 
-    // convert to points?
-    vector<Pl> hull; // (1, Pl(0, 0));
+    // convert to points
+    vector<Pl> hull;
     ll x = start.x, y = start.y;
     for(const Pl &p : vects)
     {
@@ -194,6 +196,7 @@ void solve()
     }
 
     vi ans (n);
+    // for each minor power plant, check whether it is in the polygon or already valid
     auto addValid = [&] (vector<Pl> &hull)
     {
         for(int i = 0; i < n;i++)
@@ -206,6 +209,7 @@ void solve()
         }
     };
 
+    // perform the minkowski sum on f1 * P1 + f2 * P2
     auto mink = [&] (ll f1, ll f2)
     {
         vector<Pl> vects;

@@ -152,13 +152,15 @@ struct DominatorTree {
 /* Solution Code */
 void solve()
 {
+    // input
     int n, k; cin >> n >> k;
     DominatorTree dt (n+1);
+    for(int i = 0; i <= n; i++) onPath[i] = 0;
 
     int u, v;
     vii edge;
+    // add all edges from the source node to staff nurse nodes
     for(int i = k + 1; i <= n; i++) dt.add_edge(0, i);
-    for(int i = 0; i <= n; i++) onPath[i] = 0;
     for(int i = 1; i <= k;i ++)
     {
         int m; cin >> m;
@@ -168,27 +170,32 @@ void solve()
             dt.add_edge(u, i);
         }
     }
-    dt.init(0);
 
+    dt.init(0);
     LCA lca (dt.ans);
 
+    // check for all nurses that are not connected to the source node
     vi invalid;
     for(int i = 1; i <= n; i++)
     {
         if(!onPath[i]) invalid.push_back(i);
     }
-
+    
+    // outputs the nurses that don't satisfy the first constraint
     cout << sz(invalid) << nl;
     for(int i : invalid) cout << i << " ";
-    cout << nl; // assumes this is fine even if invalid has nothing
+    cout << nl;
 
+    // processing all pairs of nurses
     vii pr;
     for(int i = 1; i <= k; i++)
     {
         if(!onPath[i]) continue;
         for(int j = i + 1; j <= n; j++)
         {
+            // skips nurses that have already been output
             if(!onPath[j]) continue;
+            // checks whether the source node is the lca between the two nurse nodes
             if(lca.lca(i, j) != 0)
             {
                 pr.push_back({i, j});
@@ -196,6 +203,7 @@ void solve()
         }
     }
 
+    // output nurse pairs that don't satisfy the second constraint
     cout << sz(pr) << nl;
     if(sz(pr) <= 10'000)
     {

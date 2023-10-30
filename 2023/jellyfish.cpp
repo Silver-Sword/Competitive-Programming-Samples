@@ -67,6 +67,7 @@ vvi next_move (CAP);
 vvi next_node (CAP);
 int num_moves[CAP];
 
+// perform the naive bfs from (a, b) and generate the valid and complete move set
 void gen_tree(ll a, ll b, ll c, ll d, ll m)
 {
     states.clear();
@@ -88,7 +89,7 @@ void gen_tree(ll a, ll b, ll c, ll d, ll m)
             int node = front;
             ll key = q[front++];
 
-            // move
+            // moves
             state[0] = key & (((key & (NUM-1)) << 30) | (NUM-1));
             state[1] = key | ((key & (NUM-1)) << 30);
             state[2] = key ^ (key >> 30);
@@ -99,6 +100,7 @@ void gen_tree(ll a, ll b, ll c, ll d, ll m)
                 ll next = state[i];
                 if(!states.insert(next).second) continue;
 
+                // add the move used to get here if it generated a unique value
                 next_move[node].push_back(i);
                 next_node[node].push_back(last);
                 num_moves[last] = counter;
@@ -113,24 +115,26 @@ void gen_tree(ll a, ll b, ll c, ll d, ll m)
 
 void solve()
 {
+    // take in input
     int b, d;
     int front = 0, last = 0;
     ll a, c;
     cin >> a >> b >> c >> d >> m;
 
+    // case out when (a, b) = (c, d)
     if(a == c && b == d) 
     {
         cout << 0 << nl;
         return;
     }
-    ll target = (c << 30) + d;
 
+    ll target = (c << 30) + d;
     states.clear();
-    
     q[0] = (a << 30) + b;
     states.insert((a << 30) + b);
     int moves = 0;
 
+    // walk through the generated move set and check whether any of the resulting values are (c, d)
     for(int i = 0; i < CAP; i++)
     {
         ll key = q[i];
@@ -140,7 +144,7 @@ void solve()
         state[2] = key ^ (key >> 30);
         state[3] = key ^ m;
 
-        moves=  sz(next_move[i]); 
+        moves = sz(next_move[i]); 
         for(int m = 0; m < moves; m++)
         {
             ll next = state[next_move[i][m]];
@@ -162,6 +166,7 @@ int main()
     cin.tie(0)->sync_with_stdio(0);
     cin.exceptions(cin.failbit);
 
+    // precomp the move set based on generated and tested values
     gen_tree(438672899, 76082099, 478699952, 433209552, 433242322);
     
     int tt; cin >> tt;

@@ -86,8 +86,9 @@ void solve()
 {
     int q; cin >> q;
 
+    // take in input
     vvi query (q);
-    vvi p (2);
+    vvi p (2); // all values of coordinates
     for(int i = 0; i < q; i++)
     {
         int type; cin >> type;
@@ -103,7 +104,7 @@ void solve()
         }
     }
 
-    // coord compress
+    // coordinate compress
     vector<map<int, int>> key (2);
     for(int i = 0; i < 2; i++)
     {
@@ -123,10 +124,9 @@ void solve()
         }
     }
 
-    // bit
+    // initialize the BITs
     FT2 pt (sz(p[0]) + 2);
     FT2 rect (sz(p[0]) + 2);
-
     for(int i = 0; i < q; i++)
     {
         if(sz(query[i]) == 2)
@@ -139,25 +139,26 @@ void solve()
             rect.fakeUpdate(query[i][2]+1, query[i][3]+1);
         }
     }
-
     pt.init();
     rect.init();
 
+    // Answer Queries
     ll ans = 0;
     for(int id = 0; id < q; id++)
     {
-        if(sz(query[id]) == 2) // point
+        // Point Query and Update
+        if(sz(query[id]) == 2)
         {
             int x = query[id][0], y = query[id][1];
             
             // query 
             ans += rect.query(x+1, y+1);
-            cout << ans << nl;
 
             // update
             pt.update(x,y,1);
         }
-        else // rectangle
+        // Rectangle Query and Update
+        else
         {
             int xs = query[id][0], ys = query[id][1], xe = query[id][2], ye = query[id][3];
             
@@ -166,7 +167,6 @@ void solve()
                  - pt.query(xe+1, ys)
                  - pt.query(xs, ye+1)
                  + pt.query(xs, ys);
-            cout << ans << nl;
 
             // update
             rect.update(xs, ys, 1);
@@ -174,6 +174,8 @@ void solve()
             rect.update(xe+1, ys, -1);
             rect.update(xe+1,ye+1, 1);
         }
+
+        cout << ans << nl;
     }
 }
 
