@@ -30,5 +30,7 @@ public class Horses {
 			
 			System.out.println(min);
 		}
+
+		scan.close();
 	}
 }

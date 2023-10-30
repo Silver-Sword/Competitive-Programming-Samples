@@ -25,7 +25,5 @@ public class exerciseWalk {
 			else
 				System.out.println("No");
 		}
-
 	}
-
 }

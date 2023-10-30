@@ -27,5 +27,7 @@ public class CNOTE {
 			
 			System.out.println(can ? "LuckyChef" : "UnluckyChef");
 		}
+
+		scan.close();
 	}
 }

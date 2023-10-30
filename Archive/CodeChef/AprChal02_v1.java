@@ -40,6 +40,8 @@ public class AprChal02_v1 {
 				out.println(ans(index, word, len, index.size()));
 			}
 		}	
+
+		in.close();
 	}
 	
 	public static long ans(ArrayList<Integer> index, String word, int len, int size)

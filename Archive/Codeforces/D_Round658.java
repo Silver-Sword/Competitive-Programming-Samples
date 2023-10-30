@@ -47,7 +47,6 @@ public class D_Round658 {
 			Collections.sort(groups);
 			boolean pos = possible(groups);
 			System.out.println(pos ? "YES" : "NO");
-			
 		}
 	}
 
@@ -56,7 +55,6 @@ public class D_Round658 {
 		int[][] dp = new int[groups.size()][n + 1];
 
 		return recur(groups, dp, n, 0, groups.size());
-		
 	}
 
 	private static boolean recur(ArrayList<Integer> groups, int[][] dp, int target, int index, int size) 
@@ -66,8 +64,6 @@ public class D_Round658 {
 		
 		if(target < 0 || index >= size)
 			return false;
-		
-		
 		
 		if(dp[index][target] != 0)
 		{

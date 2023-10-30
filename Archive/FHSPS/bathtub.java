@@ -18,7 +18,6 @@ public class bathtub {
 			else
 				System.out.println((volume - size) / rate);
 		}
-
+		scan.close();
 	}
-
 }

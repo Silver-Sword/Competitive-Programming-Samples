@@ -22,8 +22,6 @@ public class C_Trains {
 			ans = "Masha";
 		
 		System.out.println(ans);
-		
-		
 	}
 
 	public static int parse(String num)

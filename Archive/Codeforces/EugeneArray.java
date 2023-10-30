@@ -44,10 +44,7 @@ public class EugeneArray {
 				
 				track[i] += ray[i+dist];
 				if(track[i] == 0)
-				{
 					toRemove.add(i);	
-				}
-				
 				else
 					count++;
 			}
@@ -55,7 +52,6 @@ public class EugeneArray {
 			while(!toRemove.isEmpty())
 				index.remove(toRemove.pop());
 		}
-		
 		
 		System.out.println(count);
 	}

@@ -29,7 +29,7 @@ public class birthday {
 			
 			System.out.println("Birthday #" + t + ": " + count);
 		}
-
+		scan.close();
 	}
 
 }

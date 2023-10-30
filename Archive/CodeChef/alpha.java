@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class alpha {
 	public static void main(String[] args)
 	{
-		//char[] alphabet = "abcdefghijklmnopqrstuvwxyz".toCharArray();
 		Map<Integer, String> map = new HashMap<Integer, String>();
 		
 		Scanner scan = new Scanner(System.in);
@@ -19,6 +18,8 @@ public class alpha {
 			
 			System.out.println(ans);
 		}
+
+		scan.close();
 	}
 	
 	public static String output(Map<Integer, String> map, int key)

@@ -40,5 +40,7 @@ public class MarChallenge1 {
 			else
 				System.out.println(Math.max(posSize, negSize));
 		}
+
+		scan.close();
 	}
 }

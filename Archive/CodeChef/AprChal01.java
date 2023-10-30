@@ -21,6 +21,8 @@ public class AprChal01 {
 		
 		System.out.println(second % max);
 		
+		in.close();
+		out.close();
 	}
 	
 	public static int findSecondMax(int max, int[] ray)

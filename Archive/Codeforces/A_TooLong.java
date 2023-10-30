@@ -9,7 +9,6 @@ public class A_TooLong {
 		BufferedReader scan = new BufferedReader(new InputStreamReader(System.in));
 		int tt = Integer.parseInt(scan.readLine());
 		
-		
 		for(int t = 0; t < tt; t++)
 		{
 			String word = scan.readLine();

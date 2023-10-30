@@ -19,19 +19,17 @@ public class LCM_Round655 {
 				System.out.println(n / 2 + " " + (n / 2));
 				continue;
 			}
-			
 			else if(n % 3 == 0)
 			{
 				System.out.println((n /  3) + " " + ((n*2) / 3));
 				continue;
 			}
 			
-			
 			int c = ans(n);
-			
 			System.out.println((n / c) + " " + ((n * (c - 1)) / c));
 		}
 
+		scan.close();
 	}
 	
 	public static int ans(int num)
@@ -52,7 +50,4 @@ public class LCM_Round655 {
 		map.put(num, num);
 		return num;
 	}
-
 }
-
-//test 10^9

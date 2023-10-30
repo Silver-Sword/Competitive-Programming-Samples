@@ -28,17 +28,13 @@ public class baseball {
 			
 			System.out.println();
 		}
-
 	}
-
 }
 
 class Player implements Comparable<Player>
 {
 	String name;
-	
 	double batAvg, onBasePercent, sluggingPercent;
-	
 	int atBats, hits, walks, bases, plateappearance;
 	
 	public Player(String in)
@@ -118,8 +114,6 @@ class Player implements Comparable<Player>
 		
 		else
 			atBats++;
-		
-		
 	}
 
 	@Override
@@ -131,7 +125,6 @@ class Player implements Comparable<Player>
 			
 			return (p.onBasePercent - onBasePercent) > 0 ? 1 : -1;
 		}
-		
 		return (p.batAvg - batAvg) > 0 ? 1 : -1;
 	}
 	
@@ -139,5 +132,4 @@ class Player implements Comparable<Player>
 	{
 		return Math.abs(a - b) < 1e-9;
 	}
-	
 }

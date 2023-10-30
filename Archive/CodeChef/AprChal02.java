@@ -39,7 +39,9 @@ public class AprChal02 {
 				
 				out.println(ans(index, word));
 			}
-		}	
+		}
+		
+		in.close();
 	}
 	
 	public static long ans(ArrayList<Integer> index, String word)

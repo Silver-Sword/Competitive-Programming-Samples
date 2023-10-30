@@ -21,6 +21,7 @@ public class balance {
 			else
 				System.out.println("NO");
 		}
+		scan.close();
 	}
 	
 	public static int gcd(int num1, int num2)

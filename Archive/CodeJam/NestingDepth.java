@@ -42,7 +42,6 @@ public class NestingDepth {
 			
 			System.out.println();
 		}
-
 	}
 	
 	public static void addParen(int start, int[] count, String[] ans, char[] ray, int len)
@@ -70,5 +69,4 @@ public class NestingDepth {
 		else
 			ans[i-1] = ans[i-1] + temp;
 	}
-
 }

@@ -1,6 +1,5 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 import java.util.TreeSet;
@@ -66,8 +65,6 @@ public class Indicium {
 				System.out.println();
 			}
 		}
-		
-
 	}
 	
 	public static boolean fill(int y, int x, int[][] ray, TreeSet<Integer>[] rowNum, TreeSet<Integer>[] col)

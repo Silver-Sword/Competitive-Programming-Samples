@@ -20,7 +20,7 @@ public class June1 {
 			System.out.println(sum);
 		}
 			
-
+		scan.close();
 	}
 
 }

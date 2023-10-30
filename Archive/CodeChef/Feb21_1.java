@@ -12,5 +12,7 @@ public class Feb21_1 {
 				System.out.println(i);
 				return;
 			}
+		
+		scan.close();
 	}
 }

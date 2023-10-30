@@ -10,7 +10,6 @@ public class BlindFold {
 		{
 			solve(scan);			
 		}
-
 	}
 	
 	public static void solve(Scanner scan)
@@ -35,8 +34,6 @@ public class BlindFold {
 		{
 			edge = binarySearch(new Point(xLow, yLow), new Point(xHigh, yHigh), scan);
 		}
-		
-		
 	}
 	
 	public static Point binarySearch(Point low, Point high, Scanner scan)
@@ -64,14 +61,9 @@ public class BlindFold {
 				low.x = mid.x;
 				low.y = mid.y;
 			}
-			
 		}
-		
 		return low;
 	}
-	
-	
-
 }
 
 class Point
@@ -83,7 +75,6 @@ class Point
 		x = j;
 		y = i;
 	}
-	
 	public Point()
 	{
 		x = 0;

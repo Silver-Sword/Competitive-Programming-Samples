@@ -41,7 +41,6 @@ public class E_Carrots {
 			set.add(temp);
 		}
 	
-		
 		for(Carrot c : set)
 			ans += c.time();
 		

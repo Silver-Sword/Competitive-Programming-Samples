@@ -19,6 +19,6 @@ public class ATM {
 			
 			}
 			System.out.printf("%.2f", balance);
-		
+		scan.close();
 	}
 }
