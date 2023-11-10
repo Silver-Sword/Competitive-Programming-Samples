@@ -1,6 +1,6 @@
 # Welcome!
 
-Each folder has a collection of 20 sample programs that are intended to give you a 
+Both the 2022 and 2023 folders have a collection of 20 sample programs that are intended to give you a 
 good idea of the breadth and depth of my programming experience for that year.  
 
 This is not a comprehensive list by any means, but should provide a meaningful understanding 
